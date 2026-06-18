@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/content'
+import { formatDateLong as formatDate } from '@/lib/utils'
+import { categoriaMeta, categoriaMetaDefault as catDefault } from '@/lib/categorias'
 
 export const metadata = {
   title: 'Notícias | INTERFIBRAS',
-  description: 'Marcos científicos, publicações, eventos e registros do grupo INTERFIBRAS — Da natureza, para o futuro.',
+  description: 'Marcos científicos, publicações, eventos e registros do grupo INTERFIBRAS. Da natureza, para o futuro.',
 }
 
 const CATEGORIAS = [
@@ -15,22 +17,6 @@ const CATEGORIAS = [
   { label: 'Oportunidades', valor: 'Oportunidades' },
 ]
 
-const categoriaMeta = {
-  Marco:        { bg: 'rgba(221,160,31,0.10)',  border: 'rgba(221,160,31,0.30)',  text: '#9c6e12', accent: '#DDA01F' },
-  Grupo:        { bg: 'rgba(75,175,146,0.10)',  border: 'rgba(75,175,146,0.28)',  text: '#2d8a72', accent: '#4BAF92' },
-  Laboratório:  { bg: 'rgba(59,174,196,0.10)',  border: 'rgba(59,174,196,0.28)',  text: '#1e6e82', accent: '#3BAEC4' },
-  Publicação:   { bg: 'rgba(75,175,146,0.12)',  border: 'rgba(75,175,146,0.30)',  text: '#2d8a72', accent: '#4BAF92' },
-  Oportunidades:{ bg: 'rgba(105,43,186,0.10)',  border: 'rgba(105,43,186,0.28)',  text: '#692BBA', accent: '#8B52D4' },
-}
-const catDefault = { bg: 'rgba(75,175,146,0.10)', border: 'rgba(75,175,146,0.28)', text: '#2d8a72', accent: '#4BAF92' }
-
-
-function formatDate(dateStr) {
-  if (!dateStr) return ''
-  return new Date(dateStr).toLocaleDateString('pt-BR', {
-    day: '2-digit', month: 'long', year: 'numeric',
-  })
-}
 
 export default async function NoticiasPage({ searchParams }) {
   const params = await searchParams
@@ -157,19 +143,30 @@ return (
                     className="relative overflow-hidden flex items-center justify-center"
                     style={{ height: '136px', background: cat.bg, borderBottom: `1px solid ${cat.border}` }}
                   >
+                    {post.imagem ? (
+                      <img
+                        src={post.imagem}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute inset-0 w-full h-full object-cover object-top"
+                      />
+                    ) : (
+                      <>
+                        <div
+                          className="absolute inset-0"
+                          style={{
+                            backgroundImage: `radial-gradient(${cat.accent}22 1.5px, transparent 1.5px)`,
+                            backgroundSize: '18px 18px',
+                          }}
+                          aria-hidden="true"
+                        />
+                        <div className="relative z-10">
+                          <CategoryIcon categoria={post.categoria} accent={cat.accent} />
+                        </div>
+                      </>
+                    )}
                     <div
-                      className="absolute inset-0"
-                      style={{
-                        backgroundImage: `radial-gradient(${cat.accent}22 1.5px, transparent 1.5px)`,
-                        backgroundSize: '18px 18px',
-                      }}
-                      aria-hidden="true"
-                    />
-                    <div className="relative z-10">
-                      <CategoryIcon categoria={post.categoria} accent={cat.accent} />
-                    </div>
-                    <div
-                      className="absolute bottom-0 left-0 right-0 h-[2px]"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] z-10"
                       style={{ background: `linear-gradient(90deg, ${cat.accent}, transparent)` }}
                       aria-hidden="true"
                     />
@@ -187,7 +184,7 @@ return (
                         </span>
                       )}
                       {post.data && (
-                        <span className="font-inter text-[10px]" style={{ color: 'rgba(7,37,36,0.38)' }}>
+                        <span className="font-inter text-xs" style={{ color: 'rgba(7,37,36,0.55)' }}>
                           {formatDate(post.data)}
                         </span>
                       )}

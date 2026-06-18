@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { getPostBySlug, getAllPostSlugs, getDestaqueEquipe } from '@/lib/content'
 import { notFound } from 'next/navigation'
+import { formatDateLong as formatDate } from '@/lib/utils'
+import { categoriaMetaDark as categoriaMeta, categoriaMetaDarkDefault as catDefault } from '@/lib/categorias'
 
 export async function generateStaticParams() {
   return getAllPostSlugs().map((slug) => ({ slug }))
@@ -15,20 +17,6 @@ export async function generateMetadata({ params }) {
     description: post.resumo || post.titulo,
     openGraph: { images: post.imagem ? [{ url: post.imagem }] : [] },
   }
-}
-
-const categoriaMeta = {
-  Marco:        { color: '#DDA01F', bg: 'rgba(221,160,31,0.12)',  border: 'rgba(221,160,31,0.32)'  },
-  Grupo:        { color: '#4BAF92', bg: 'rgba(75,175,146,0.13)',  border: 'rgba(75,175,146,0.32)'  },
-  Laboratório:  { color: '#3BAEC4', bg: 'rgba(59,174,196,0.12)',  border: 'rgba(59,174,196,0.32)'  },
-  Publicação:   { color: '#4BAF92', bg: 'rgba(75,175,146,0.13)',  border: 'rgba(75,175,146,0.32)'  },
-  Oportunidades:{ color: '#b785f5', bg: 'rgba(105,43,186,0.13)',  border: 'rgba(105,43,186,0.32)'  },
-}
-const catDefault = { color: '#4BAF92', bg: 'rgba(75,175,146,0.13)', border: 'rgba(75,175,146,0.32)' }
-
-function formatDate(dateStr) {
-  if (!dateStr) return ''
-  return new Date(dateStr).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })
 }
 
 export default async function PostPage({ params }) {
@@ -261,9 +249,9 @@ export default async function PostPage({ params }) {
               />
               <p className="label-sm mb-3 relative z-10" style={{ color: 'rgba(138,191,178,0.65)' }}>O grupo INTERFIBRAS</p>
               <p className="font-sora font-bold text-white text-sm leading-snug mb-3 relative z-10">
-                Da biomassa à biofabricação — materiais renováveis de base biológica
+                Da biomassa à biofabricação: materiais renováveis de base biológica
               </p>
-              <p className="font-inter text-xs leading-relaxed mb-5 relative z-10" style={{ color: 'rgba(255,255,255,0.48)' }}>
+              <p className="font-inter text-xs leading-relaxed mb-5 relative z-10" style={{ color: 'rgba(255,255,255,0.70)' }}>
                 Desenvolvemos filmes, fibras e membranas a partir de nanoblocos naturais
                 usando interfaces, auto-organização e biofabricação.
               </p>
@@ -291,8 +279,8 @@ export default async function PostPage({ params }) {
               className="rounded-2xl p-6"
               style={{ background: 'rgba(75,175,146,0.06)', border: '1px solid rgba(75,175,146,0.20)' }}
             >
-              <p className="label-sm mb-3" style={{ color: 'rgba(7,37,36,0.40)' }}>Vagas abertas</p>
-              <p className="font-sora font-bold text-verde-profundo text-sm mb-1">IC e Mestrado — 2026</p>
+              <p className="label-sm mb-3" style={{ color: 'rgba(7,37,36,0.55)' }}>Vagas abertas</p>
+              <p className="font-sora font-bold text-verde-profundo text-sm mb-1">IC e Mestrado 2026</p>
               <p className="font-inter text-xs text-verde-profundo/55 leading-relaxed mb-4">
                 Bolsas FAPESP disponíveis. Envie CV (preferencialmente Lattes) e histórico escolar.
               </p>

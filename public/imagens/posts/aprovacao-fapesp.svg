@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#072524"/>
+      <stop offset="55%" stop-color="#0c3330"/>
+      <stop offset="100%" stop-color="#0f2a4a"/>
+    </linearGradient>
+    <linearGradient id="f1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4BAF92" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#4BAF92" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#4BAF92" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="f2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#692BBA" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#692BBA" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#692BBA" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="f3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8ABFB2" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#8ABFB2" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#8ABFB2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4BAF92"/>
+      <stop offset="100%" stop-color="#692BBA"/>
+    </linearGradient>
+    <radialGradient id="orb1" cx="25%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#4BAF92" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#4BAF92" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="78%" cy="55%" r="38%">
+      <stop offset="0%" stop-color="#692BBA" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#692BBA" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur40">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="blur20">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Orbs -->
+  <ellipse cx="300" cy="283" rx="340" ry="340" fill="url(#orb1)" filter="url(#blur40)"/>
+  <ellipse cx="936" cy="347" rx="280" ry="280" fill="url(#orb2)" filter="url(#blur40)"/>
+
+  <!-- Fiber filaments — horizontal flowing lines -->
+  <path d="M-20 310 Q200 280 420 315 Q640 350 860 320 Q1020 300 1220 330" stroke="url(#f1)" stroke-width="1.4" fill="none"/>
+  <path d="M-20 335 Q180 305 400 338 Q660 372 900 340 Q1060 315 1220 355" stroke="url(#f1)" stroke-width="0.9" fill="none"/>
+  <path d="M-20 358 Q220 328 460 358 Q720 390 960 358 Q1100 335 1220 375" stroke="url(#f3)" stroke-width="0.7" fill="none"/>
+  <path d="M-20 390 Q300 360 560 390 Q800 420 1040 388 Q1140 370 1220 400" stroke="url(#f2)" stroke-width="1.2" fill="none"/>
+  <path d="M-20 415 Q280 385 540 415 Q820 448 1080 415 Q1160 395 1220 425" stroke="url(#f2)" stroke-width="0.8" fill="none"/>
+  <path d="M-20 440 Q350 410 620 442 Q880 472 1120 445 Q1180 432 1220 450" stroke="url(#f3)" stroke-width="0.5" fill="none"/>
+
+  <!-- Molecular network — right side -->
+  <!-- Central node -->
+  <circle cx="980" cy="200" r="8" fill="#4BAF92" opacity="0.90"/>
+  <circle cx="980" cy="200" r="18" fill="none" stroke="#4BAF92" stroke-width="1" opacity="0.35"/>
+  <circle cx="980" cy="200" r="32" fill="none" stroke="#4BAF92" stroke-width="0.5" opacity="0.18"/>
+
+  <!-- Satellite nodes and connections -->
+  <line x1="980" y1="200" x2="1060" y2="140" stroke="#4BAF92" stroke-width="0.7" opacity="0.45"/>
+  <circle cx="1060" cy="140" r="4.5" fill="#4BAF92" opacity="0.75"/>
+  <circle cx="1060" cy="140" r="12" fill="none" stroke="#4BAF92" stroke-width="0.5" opacity="0.22"/>
+
+  <line x1="980" y1="200" x2="1110" y2="215" stroke="#8ABFB2" stroke-width="0.7" opacity="0.40"/>
+  <circle cx="1110" cy="215" r="4" fill="#8ABFB2" opacity="0.70"/>
+
+  <line x1="980" y1="200" x2="1050" y2="285" stroke="#692BBA" stroke-width="0.7" opacity="0.40"/>
+  <circle cx="1050" cy="285" r="5" fill="#692BBA" opacity="0.75"/>
+  <circle cx="1050" cy="285" r="14" fill="none" stroke="#692BBA" stroke-width="0.5" opacity="0.22"/>
+
+  <line x1="980" y1="200" x2="900" y2="255" stroke="#8ABFB2" stroke-width="0.7" opacity="0.38"/>
+  <circle cx="900" cy="255" r="3.5" fill="#8ABFB2" opacity="0.65"/>
+
+  <line x1="980" y1="200" x2="910" y2="130" stroke="#692BBA" stroke-width="0.7" opacity="0.35"/>
+  <circle cx="910" cy="130" r="3.5" fill="#692BBA" opacity="0.60"/>
+
+  <!-- Second-order connections -->
+  <line x1="1060" y1="140" x2="1140" y2="110" stroke="#4BAF92" stroke-width="0.5" opacity="0.28"/>
+  <circle cx="1140" cy="110" r="3" fill="#4BAF92" opacity="0.55"/>
+  <line x1="1050" y1="285" x2="1130" y2="320" stroke="#692BBA" stroke-width="0.5" opacity="0.28"/>
+  <circle cx="1130" cy="320" r="3" fill="#692BBA" opacity="0.50"/>
+  <line x1="900" y1="255" x2="840" y2="295" stroke="#8ABFB2" stroke-width="0.5" opacity="0.25"/>
+  <circle cx="840" cy="295" r="2.5" fill="#8ABFB2" opacity="0.45"/>
+
+  <!-- Small floating molecules — left side -->
+  <circle cx="80" cy="480" r="3" fill="#4BAF92" opacity="0.40"/>
+  <circle cx="140" cy="510" r="2" fill="#692BBA" opacity="0.35"/>
+  <circle cx="105" cy="540" r="2.5" fill="#8ABFB2" opacity="0.30"/>
+  <line x1="80" y1="480" x2="140" y2="510" stroke="#4BAF92" stroke-width="0.5" opacity="0.25"/>
+  <line x1="140" y1="510" x2="105" y2="540" stroke="#8ABFB2" stroke-width="0.5" opacity="0.22"/>
+
+  <!-- Dot grid — very subtle -->
+  <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.045)"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Gradient accent line top -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#brand)"/>
+
+  <!-- Main content area -->
+  <!-- Category badge -->
+  <rect x="72" y="60" width="82" height="26" rx="13" fill="rgba(221,160,31,0.15)" stroke="#DDA01F" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="113" y="77" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#DDA01F" text-anchor="middle" letter-spacing="1.2">MARCO</text>
+
+  <!-- Date -->
+  <text x="72" y="115" font-family="Inter, sans-serif" font-size="13" fill="rgba(138,191,178,0.72)" letter-spacing="0.3">12 de junho de 2025</text>
+
+  <!-- Main headline -->
+  <text x="72" y="178" font-family="Sora, sans-serif" font-size="46" font-weight="800" fill="white" letter-spacing="-1.2">INTERFIBRAS recebe</text>
+  <text x="72" y="234" font-family="Sora, sans-serif" font-size="46" font-weight="800" letter-spacing="-1.2">
+    <tspan fill="#4BAF92">aprovação</tspan><tspan fill="white"> do Projeto</tspan>
+  </text>
+  <text x="72" y="290" font-family="Sora, sans-serif" font-size="46" font-weight="800" fill="white" letter-spacing="-1.2">Jovem Pesquisador FAPESP</text>
+
+  <!-- Divider line -->
+  <rect x="72" y="314" width="220" height="2" rx="1" fill="url(#brand)"/>
+
+  <!-- Subtitle -->
+  <text x="72" y="352" font-family="Inter, sans-serif" font-size="16" fill="rgba(255,255,255,0.60)" letter-spacing="0.1">Aprovação formal do Processo 2023/03039-7 pelo programa</text>
+  <text x="72" y="375" font-family="Inter, sans-serif" font-size="16" fill="rgba(255,255,255,0.60)" letter-spacing="0.1">de maior prestígio da FAPESP para jovens pesquisadores.</text>
+
+  <!-- FAPESP process badge -->
+  <rect x="72" y="415" width="230" height="38" rx="19" fill="rgba(75,175,146,0.10)" stroke="#4BAF92" stroke-width="1" stroke-opacity="0.38"/>
+  <text x="187" y="438" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8ABFB2" text-anchor="middle" letter-spacing="1.0">Processo FAPESP 2023/03039-7</text>
+
+  <!-- Institution badge -->
+  <rect x="316" y="415" width="165" height="38" rx="19" fill="rgba(105,43,186,0.10)" stroke="#692BBA" stroke-width="1" stroke-opacity="0.35"/>
+  <text x="398" y="438" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#b785f5" text-anchor="middle" letter-spacing="0.8">EESC-USP · São Carlos</text>
+
+  <!-- INTERFIBRAS logo mark — bottom right area -->
+  <text x="72" y="590" font-family="Sora, sans-serif" font-size="13" font-weight="300" fill="rgba(255,255,255,0.22)" letter-spacing="2">interfibras.usp.br</text>
+</svg>

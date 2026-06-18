@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#072524"/>
+      <stop offset="55%" stop-color="#0c3330"/>
+      <stop offset="100%" stop-color="#0f2a4a"/>
+    </linearGradient>
+    <linearGradient id="f1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B52D4" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#8B52D4" stop-opacity="0.70"/>
+      <stop offset="100%" stop-color="#8B52D4" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="f2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4BAF92" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#4BAF92" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#4BAF92" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="f3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8ABFB2" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#8ABFB2" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#8ABFB2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B52D4"/>
+      <stop offset="100%" stop-color="#4BAF92"/>
+    </linearGradient>
+    <radialGradient id="orb1" cx="78%" cy="38%" r="42%">
+      <stop offset="0%" stop-color="#8B52D4" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#8B52D4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="22%" cy="60%" r="38%">
+      <stop offset="0%" stop-color="#4BAF92" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#4BAF92" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur40">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="blur20">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Orbs -->
+  <ellipse cx="936" cy="240" rx="310" ry="310" fill="url(#orb1)" filter="url(#blur40)"/>
+  <ellipse cx="264" cy="380" rx="270" ry="270" fill="url(#orb2)" filter="url(#blur40)"/>
+
+  <!-- Fiber filaments — in violet palette -->
+  <path d="M-20 310 Q200 280 420 315 Q640 350 860 320 Q1020 300 1220 330" stroke="url(#f1)" stroke-width="1.4" fill="none"/>
+  <path d="M-20 335 Q180 305 400 338 Q660 372 900 340 Q1060 315 1220 355" stroke="url(#f1)" stroke-width="0.9" fill="none"/>
+  <path d="M-20 358 Q220 328 460 358 Q720 390 960 358 Q1100 335 1220 375" stroke="url(#f3)" stroke-width="0.7" fill="none"/>
+  <path d="M-20 390 Q300 360 560 390 Q800 420 1040 388 Q1140 370 1220 400" stroke="url(#f2)" stroke-width="1.1" fill="none"/>
+  <path d="M-20 415 Q280 385 540 415 Q820 448 1080 415 Q1160 395 1220 425" stroke="url(#f2)" stroke-width="0.7" fill="none"/>
+
+  <!-- Molecular fiber helix / biopolymer chain — right side -->
+  <!-- Backbone chain -->
+  <path d="M870 80 Q910 120 870 160 Q830 200 870 240 Q910 280 870 320 Q830 360 870 400" stroke="#8B52D4" stroke-width="1.5" fill="none" opacity="0.55"/>
+  <path d="M930 80 Q890 120 930 160 Q970 200 930 240 Q890 280 930 320 Q970 360 930 400" stroke="#4BAF92" stroke-width="1.0" fill="none" opacity="0.42"/>
+
+  <!-- Cross links (like nucleotide rungs) -->
+  <line x1="870" y1="100" x2="930" y2="100" stroke="#b785f5" stroke-width="0.8" opacity="0.35"/>
+  <line x1="870" y1="140" x2="930" y2="140" stroke="#b785f5" stroke-width="0.8" opacity="0.32"/>
+  <line x1="870" y1="180" x2="930" y2="180" stroke="#8ABFB2" stroke-width="0.8" opacity="0.35"/>
+  <line x1="870" y1="220" x2="930" y2="220" stroke="#b785f5" stroke-width="0.8" opacity="0.32"/>
+  <line x1="870" y1="260" x2="930" y2="260" stroke="#8ABFB2" stroke-width="0.8" opacity="0.35"/>
+  <line x1="870" y1="300" x2="930" y2="300" stroke="#b785f5" stroke-width="0.8" opacity="0.30"/>
+  <line x1="870" y1="340" x2="930" y2="340" stroke="#8ABFB2" stroke-width="0.8" opacity="0.32"/>
+  <line x1="870" y1="380" x2="930" y2="380" stroke="#b785f5" stroke-width="0.8" opacity="0.28"/>
+
+  <!-- Node dots on chain -->
+  <circle cx="870" cy="100" r="3.5" fill="#8B52D4" opacity="0.72"/>
+  <circle cx="870" cy="140" r="2.5" fill="#b785f5" opacity="0.58"/>
+  <circle cx="870" cy="180" r="3.5" fill="#8B52D4" opacity="0.70"/>
+  <circle cx="870" cy="220" r="2.5" fill="#b785f5" opacity="0.55"/>
+  <circle cx="870" cy="260" r="3.5" fill="#8B52D4" opacity="0.68"/>
+  <circle cx="870" cy="300" r="2.5" fill="#b785f5" opacity="0.52"/>
+  <circle cx="870" cy="340" r="3.5" fill="#8B52D4" opacity="0.65"/>
+
+  <circle cx="930" cy="100" r="3" fill="#4BAF92" opacity="0.65"/>
+  <circle cx="930" cy="140" r="2.5" fill="#8ABFB2" opacity="0.52"/>
+  <circle cx="930" cy="180" r="3" fill="#4BAF92" opacity="0.62"/>
+  <circle cx="930" cy="220" r="2.5" fill="#8ABFB2" opacity="0.50"/>
+  <circle cx="930" cy="260" r="3" fill="#4BAF92" opacity="0.60"/>
+  <circle cx="930" cy="300" r="2.5" fill="#8ABFB2" opacity="0.48"/>
+  <circle cx="930" cy="340" r="3" fill="#4BAF92" opacity="0.58"/>
+
+  <!-- Extending side chains -->
+  <line x1="930" y1="120" x2="990" y2="110" stroke="#8B52D4" stroke-width="0.5" opacity="0.28"/>
+  <circle cx="990" cy="110" r="2" fill="#8B52D4" opacity="0.45"/>
+  <line x1="930" y1="200" x2="1000" y2="195" stroke="#4BAF92" stroke-width="0.5" opacity="0.28"/>
+  <circle cx="1000" cy="195" r="2" fill="#4BAF92" opacity="0.42"/>
+  <line x1="930" y1="280" x2="1010" y2="270" stroke="#8B52D4" stroke-width="0.5" opacity="0.26"/>
+  <circle cx="1010" cy="270" r="2" fill="#8B52D4" opacity="0.40"/>
+  <line x1="870" y1="160" x2="800" y2="155" stroke="#b785f5" stroke-width="0.5" opacity="0.25"/>
+  <circle cx="800" cy="155" r="2" fill="#b785f5" opacity="0.40"/>
+  <line x1="870" y1="240" x2="795" y2="235" stroke="#8ABFB2" stroke-width="0.5" opacity="0.25"/>
+  <circle cx="795" cy="235" r="2" fill="#8ABFB2" opacity="0.38"/>
+
+  <!-- Small molecule cluster left -->
+  <circle cx="80" cy="480" r="3" fill="#8B52D4" opacity="0.42"/>
+  <circle cx="140" cy="510" r="2" fill="#4BAF92" opacity="0.36"/>
+  <circle cx="105" cy="540" r="2.5" fill="#b785f5" opacity="0.32"/>
+  <line x1="80" y1="480" x2="140" y2="510" stroke="#8B52D4" stroke-width="0.5" opacity="0.26"/>
+  <line x1="140" y1="510" x2="105" y2="540" stroke="#4BAF92" stroke-width="0.5" opacity="0.22"/>
+
+  <!-- Dot grid -->
+  <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.045)"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Brand line top -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#brand)"/>
+
+  <!-- Category badge -->
+  <rect x="72" y="60" width="112" height="26" rx="13" fill="rgba(105,43,186,0.15)" stroke="#8B52D4" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="128" y="77" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#b785f5" text-anchor="middle" letter-spacing="1.2">OPORTUNIDADES</text>
+
+  <!-- Date -->
+  <text x="72" y="115" font-family="Inter, sans-serif" font-size="13" fill="rgba(138,191,178,0.72)" letter-spacing="0.3">10 de junho de 2026</text>
+
+  <!-- Main headline -->
+  <text x="72" y="178" font-family="Sora, sans-serif" font-size="46" font-weight="800" fill="white" letter-spacing="-1.2">Chamada aberta:</text>
+  <text x="72" y="234" font-family="Sora, sans-serif" font-size="46" font-weight="800" letter-spacing="-1.2">
+    <tspan fill="#b785f5">Iniciação Científica</tspan>
+  </text>
+  <text x="72" y="290" font-family="Sora, sans-serif" font-size="46" font-weight="800" fill="white" letter-spacing="-1.2">2026</text>
+
+  <!-- Divider line -->
+  <rect x="72" y="314" width="220" height="2" rx="1" fill="url(#brand)"/>
+
+  <!-- Subtitle -->
+  <text x="72" y="352" font-family="Inter, sans-serif" font-size="16" fill="rgba(255,255,255,0.60)" letter-spacing="0.1">Bolsas FAPESP disponíveis para graduandos.</text>
+  <text x="72" y="375" font-family="Inter, sans-serif" font-size="16" fill="rgba(255,255,255,0.60)" letter-spacing="0.1">Pesquisa em nanocelulose, quitosana e biofabricação.</text>
+
+  <!-- Badges -->
+  <rect x="72" y="415" width="155" height="38" rx="19" fill="rgba(105,43,186,0.12)" stroke="#8B52D4" stroke-width="1" stroke-opacity="0.40"/>
+  <text x="149" y="438" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#b785f5" text-anchor="middle" letter-spacing="0.8">Bolsa FAPESP IC</text>
+
+  <rect x="241" y="415" width="165" height="38" rx="19" fill="rgba(75,175,146,0.10)" stroke="#4BAF92" stroke-width="1" stroke-opacity="0.35"/>
+  <text x="323" y="438" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8ABFB2" text-anchor="middle" letter-spacing="0.8">EESC-USP · São Carlos</text>
+
+  <!-- Footer -->
+  <text x="72" y="590" font-family="Sora, sans-serif" font-size="13" font-weight="300" fill="rgba(255,255,255,0.22)" letter-spacing="2">interfibras.usp.br</text>
+</svg>
