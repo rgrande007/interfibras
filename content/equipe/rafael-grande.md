@@ -1,16 +1,16 @@
 ---
 nome: "Dr. Rafael Grande"
-cargo: "Coordenador · Jovem Pesquisador FAPESP"
+cargo: "Jovem Pesquisador FAPESP · EESC-USP"
 nivel: "Coordenador"
 ordem: 1
 foto: "/imagens/equipe/rafael-grande.gif"
 lattes: "http://lattes.cnpq.br/2232805898804829"
 orcid: "https://orcid.org/0000-0001-7817-3698"
 areas:
-  - nanocelulose e nanoquitina
-  - fiação interfacial
+  - materiais de fontes renováveis
+  - polímeros naturais
+  - nanoblocos
   - filmes e membranas
-  - biofabricação
 destaque: true
 inicio: "2025-06"
 ---

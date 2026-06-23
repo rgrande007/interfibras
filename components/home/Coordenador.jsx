@@ -5,8 +5,8 @@ import { CONTACT_EMAIL, MAILTO_GERAL } from '@/lib/mailto'
 const fatos = [
   {
     rotulo: 'Escala do problema',
-    dado: '~8 bilhões t',
-    desc: 'de plástico acumuladas no ambiente desde 1950',
+    dado: '~8 bilhões',
+    desc: 'toneladas de plástico acumuladas no ambiente desde 1950',
     cor: '#DDA01F',
   },
   {
@@ -18,7 +18,7 @@ const fatos = [
   {
     rotulo: 'Matéria-prima queimada',
     dado: '~1,9 Gt',
-    desc: 'de resíduos agrícolas gerados por ano — queimados ou enterrados, mas ricos em celulose, quitina e outros biopolímeros aproveitáveis',
+    desc: 'gigatoneladas de resíduos agrícolas gerados por ano — queimados ou enterrados, mas ricos em celulose, quitina e outros biopolímeros aproveitáveis',
     cor: '#4BAF92',
   },
 ]

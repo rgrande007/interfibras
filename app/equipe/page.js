@@ -116,15 +116,24 @@ function SectionLabel({ children }) {
 }
 
 function MemberCard({ membro }) {
+  const hasLinks = membro.lattes || membro.orcid || membro.linkedin
+
   return (
     <div className="bg-white rounded-2xl overflow-hidden border border-gray-100
                     hover:border-verde-jade/30 hover:shadow-xl hover:shadow-verde-jade/6
-                    transition-all duration-300 flex flex-col group">
+                    transition-all duration-300 flex flex-col group relative">
+
+      {/* Stretched link para notícia de entrada */}
+      {membro.noticia && (
+        <Link
+          href={`/noticias/${membro.noticia}`}
+          className="absolute inset-0 z-0"
+          aria-label={`Ver notícia de entrada de ${membro.nome}`}
+        />
+      )}
 
       {/* Foto */}
-      <div
-        className="relative w-full overflow-hidden bg-gray-100 aspect-square"
-      >
+      <div className="relative w-full overflow-hidden bg-gray-100 aspect-square">
         {membro.foto ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -145,7 +154,7 @@ function MemberCard({ membro }) {
       </div>
 
       {/* Info */}
-      <div className="flex flex-col gap-4 p-6 flex-1">
+      <div className="flex flex-col gap-4 p-6 flex-1 relative z-10">
         <div>
           <h3 className="font-sora font-bold text-verde-profundo text-lg leading-snug mb-1">
             {membro.nome}
@@ -173,20 +182,31 @@ function MemberCard({ membro }) {
           </div>
         )}
 
-        <div className="flex gap-4 mt-auto pt-4" style={{ borderTop: '1px solid rgba(7,37,36,0.07)' }}>
-          {membro.lattes && (
-            <a href={membro.lattes} target="_blank" rel="noopener noreferrer"
-              className="font-inter text-xs font-semibold text-verde-jade hover:text-verde-profundo transition-colors">
-              Lattes ↗
-            </a>
-          )}
-          {membro.orcid && (
-            <a href={membro.orcid} target="_blank" rel="noopener noreferrer"
-              className="font-inter text-xs font-semibold text-verde-jade hover:text-verde-profundo transition-colors">
-              ORCID ↗
-            </a>
-          )}
-        </div>
+        {hasLinks && (
+          <div className="flex gap-4 mt-auto pt-4" style={{ borderTop: '1px solid rgba(7,37,36,0.07)' }}>
+            {membro.lattes && (
+              <a href={membro.lattes} target="_blank" rel="noopener noreferrer"
+                aria-label={`Currículo Lattes de ${membro.nome}`}
+                className="font-inter text-xs font-semibold text-verde-jade hover:text-verde-profundo transition-colors relative z-20">
+                Lattes ↗
+              </a>
+            )}
+            {membro.orcid && (
+              <a href={membro.orcid} target="_blank" rel="noopener noreferrer"
+                aria-label={`ORCID de ${membro.nome}`}
+                className="font-inter text-xs font-semibold text-verde-jade hover:text-verde-profundo transition-colors relative z-20">
+                ORCID ↗
+              </a>
+            )}
+            {membro.linkedin && (
+              <a href={membro.linkedin} target="_blank" rel="noopener noreferrer"
+                aria-label={`LinkedIn de ${membro.nome}`}
+                className="font-inter text-xs font-semibold text-verde-jade hover:text-verde-profundo transition-colors relative z-20">
+                LinkedIn ↗
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </div>
   )

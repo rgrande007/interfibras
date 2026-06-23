@@ -93,13 +93,12 @@ export default function EquipePreview({ membros }) {
               <span className="relative inline-flex h-2 w-2 rounded-full" style={{ background: '#4BAF92' }} />
             </span>
             <p className="font-sora font-semibold text-sm text-verde-profundo leading-snug">
-              Entrar num grupo novo não é uma limitação: é uma vantagem.
+              Ciência com orientação próxima e autoria real.
             </p>
           </div>
           <p className="font-inter text-xs leading-relaxed pl-5" style={{ color: 'rgba(7,37,36,0.62)' }}>
-            Os primeiros integrantes trabalham diretamente com o orientador desde o primeiro
-            experimento, participam das decisões de protocolo, influenciam as linhas do grupo
-            e figuram entre os autores dos primeiros artigos publicados pelo INTERFIBRAS.{' '}
+            Integrantes trabalham diretamente com o orientador na bancada, participam das
+            decisões experimentais e figuram como autores nas publicações do grupo.{' '}
             <Link href="/oportunidades" className="font-semibold underline underline-offset-2 hover:opacity-70 transition-opacity" style={{ color: '#1a6b55' }}>
               Ver vagas abertas →
             </Link>
@@ -229,64 +228,112 @@ function InviteCard() {
 
 function MemberCard({ membro, delay }) {
   const [hovered, setHovered] = useState(false)
+  const isCoordenador = membro.nivel === 'Coordenador'
+
+  const accentGradient = isCoordenador
+    ? 'linear-gradient(90deg, #DDA01F, #F7B731)'
+    : 'linear-gradient(90deg, #4BAF92, #692BBA)'
+
+  const photoRingGradient = isCoordenador
+    ? hovered
+      ? 'linear-gradient(135deg, #DDA01F 0%, #F7B731 50%, #fff9e6 100%)'
+      : 'linear-gradient(135deg, #DDA01F 0%, #F7B731 100%)'
+    : hovered
+      ? 'linear-gradient(135deg, #4BAF92 0%, #692BBA 50%, #F7F2A3 100%)'
+      : 'linear-gradient(135deg, #4BAF92 0%, #692BBA 100%)'
+
+  const topBg = isCoordenador
+    ? hovered
+      ? 'linear-gradient(180deg, rgba(221,160,31,0.12) 0%, rgba(255,255,255,0) 100%)'
+      : 'linear-gradient(180deg, rgba(221,160,31,0.07) 0%, rgba(255,255,255,0) 100%)'
+    : hovered
+      ? 'linear-gradient(180deg, rgba(75,175,146,0.09) 0%, rgba(255,255,255,0) 100%)'
+      : 'linear-gradient(180deg, rgba(75,175,146,0.06) 0%, rgba(255,255,255,0) 100%)'
+
+  const borderColor = isCoordenador
+    ? hovered ? 'rgba(221,160,31,0.50)' : 'rgba(221,160,31,0.28)'
+    : hovered ? 'rgba(75,175,146,0.28)' : 'rgb(243,244,246)'
+
+  const boxShadow = isCoordenador
+    ? hovered
+      ? '0 24px 60px rgba(221,160,31,0.18), 0 6px 20px rgba(0,0,0,0.06)'
+      : '0 2px 12px rgba(221,160,31,0.10), 0 1px 3px rgba(0,0,0,0.04)'
+    : hovered
+      ? '0 24px 60px rgba(75,175,146,0.15), 0 6px 20px rgba(0,0,0,0.06)'
+      : '0 1px 3px rgba(0,0,0,0.04)'
 
   return (
     <div
       className={`reveal reveal-delay-${delay} bg-white border rounded-2xl
                   overflow-hidden flex flex-col items-center text-center relative`}
       style={{
-        borderColor: hovered ? 'rgba(75,175,146,0.28)' : 'rgb(243,244,246)',
+        borderColor,
         transform: hovered ? 'translateY(-6px)' : 'none',
-        boxShadow: hovered
-          ? '0 24px 60px rgba(75,175,146,0.15), 0 6px 20px rgba(0,0,0,0.06)'
-          : '0 1px 3px rgba(0,0,0,0.04)',
+        boxShadow,
         transition: 'transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease, border-color 0.28s ease',
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Stretched link — cobre o card inteiro sem criar <a> dentro de <a> */}
+      {/* Stretched link — vai para notícia de entrada se existir, senão para /equipe */}
       <Link
-        href="/equipe"
+        href={membro.noticia ? `/noticias/${membro.noticia}` : '/equipe'}
         className="absolute inset-0 z-0"
-        aria-label={`Ver equipe completa: ${membro.nome}`}
+        aria-label={membro.noticia ? `Ver notícia: ${membro.nome}` : `Ver equipe completa: ${membro.nome}`}
         onFocus={() => setHovered(true)}
         onBlur={() => setHovered(false)}
       />
 
-      {/* Top accent bar */}
+      {/* Top accent bar — always visible for coordinator, hover-only for others */}
       <div
-        className="absolute inset-x-0 top-0 h-[2px] z-10"
+        className="absolute inset-x-0 top-0 z-10"
         style={{
-          background: 'linear-gradient(90deg, #4BAF92, #692BBA)',
-          opacity: hovered ? 1 : 0,
+          height: isCoordenador ? '3px' : '2px',
+          background: accentGradient,
+          opacity: isCoordenador ? 0.90 : (hovered ? 1 : 0),
           transition: 'opacity 0.28s ease',
         }}
         aria-hidden="true"
       />
 
-      {/* Topo com gradiente sutil */}
+      {/* Top section */}
       <div
         className="w-full pt-7 pb-5 px-5 flex flex-col items-center gap-3 relative z-10"
-        style={{
-          background: hovered
-            ? 'linear-gradient(180deg, rgba(75,175,146,0.09) 0%, rgba(255,255,255,0) 100%)'
-            : 'linear-gradient(180deg, rgba(75,175,146,0.06) 0%, rgba(255,255,255,0) 100%)',
-          transition: 'background 0.28s ease',
-        }}
+        style={{ background: topBg, transition: 'background 0.28s ease' }}
       >
-        {/* Foto circular 1:1 */}
+        {/* Coordinator crown icon */}
+        {isCoordenador && (
+          <div
+            className="absolute top-4 right-4 flex items-center gap-1 rounded-full px-2 py-0.5"
+            style={{
+              background: 'rgba(221,160,31,0.10)',
+              border: '1px solid rgba(221,160,31,0.28)',
+            }}
+            aria-hidden="true"
+          >
+            <svg width="10" height="10" viewBox="0 0 12 10" fill="#DDA01F">
+              <path d="M6 0L7.8 3.6L12 4.2L9 7.1L9.7 11.2L6 9.2L2.3 11.2L3 7.1L0 4.2L4.2 3.6Z" transform="scale(1, 0.85)"/>
+            </svg>
+            <span className="font-inter text-[9px] font-bold" style={{ color: '#7a5300', letterSpacing: '0.04em' }}>PI</span>
+          </div>
+        )}
+
+        {/* Foto circular */}
         <div
           className="relative shrink-0"
           style={{
-            width: '120px',
-            height: '120px',
+            width: isCoordenador ? '128px' : '112px',
+            height: isCoordenador ? '128px' : '112px',
             borderRadius: '50%',
-            padding: '2px',
-            background: hovered
-              ? 'linear-gradient(135deg, #4BAF92 0%, #692BBA 50%, #F7F2A3 100%)'
-              : 'linear-gradient(135deg, #4BAF92 0%, #692BBA 100%)',
-            boxShadow: hovered ? '0 0 18px rgba(75,175,146,0.28)' : 'none',
+            padding: '2.5px',
+            background: photoRingGradient,
+            boxShadow: hovered
+              ? isCoordenador
+                ? '0 0 22px rgba(221,160,31,0.35)'
+                : '0 0 18px rgba(75,175,146,0.28)'
+              : isCoordenador
+                ? '0 0 10px rgba(221,160,31,0.18)'
+                : 'none',
             transition: 'background 0.4s ease, box-shadow 0.3s ease',
           }}
         >
@@ -310,12 +357,28 @@ function MemberCard({ membro, delay }) {
 
         {/* Nome + cargo */}
         <div>
-          <h3 className="font-sora font-bold text-verde-profundo text-lg leading-snug mb-1">
+          <h3
+            className="font-sora font-bold text-verde-profundo leading-snug mb-1"
+            style={{ fontSize: isCoordenador ? '1.125rem' : '1rem' }}
+          >
             {membro.nome}
           </h3>
-          <p className="font-inter text-sm font-semibold" style={{ color: '#2d8a72' }}>
-            {membro.cargo}
-          </p>
+          <div className="flex flex-col items-center gap-1.5">
+            <p
+              className="font-inter text-sm font-semibold"
+              style={{ color: isCoordenador ? '#7a5300' : '#2d8a72' }}
+            >
+              {membro.cargo}
+            </p>
+            {membro.nivel && (
+              <span
+                className="font-inter text-xs font-semibold rounded-full px-2.5 py-1"
+                style={getNivelStyle(membro.nivel)}
+              >
+                {membro.nivel}
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Bio curta */}
@@ -329,7 +392,7 @@ function MemberCard({ membro, delay }) {
       {/* Corpo do card */}
       <div
         className="w-full flex flex-col gap-4 px-6 pb-6 relative z-10"
-        style={{ borderTop: '1px solid rgba(7,37,36,0.06)' }}
+        style={{ borderTop: `1px solid ${isCoordenador ? 'rgba(221,160,31,0.12)' : 'rgba(7,37,36,0.06)'}` }}
       >
         {/* Áreas */}
         {membro.areas && (
@@ -338,11 +401,11 @@ function MemberCard({ membro, delay }) {
               <span
                 key={a}
                 className="font-inter text-xs font-medium rounded-full px-2.5 py-1"
-                style={{
-                  color: '#1f6b56',
-                  background: 'rgba(75,175,146,0.10)',
-                  border: '1px solid rgba(75,175,146,0.28)',
-                }}
+                style={
+                  isCoordenador
+                    ? { color: '#7a5300', background: 'rgba(221,160,31,0.09)', border: '1px solid rgba(221,160,31,0.25)' }
+                    : { color: '#1f6b56', background: 'rgba(75,175,146,0.10)', border: '1px solid rgba(75,175,146,0.28)' }
+                }
               >
                 {a}
               </span>
@@ -350,31 +413,47 @@ function MemberCard({ membro, delay }) {
           </div>
         )}
 
-        {/* Links Lattes/ORCID — z-20 para ficarem clicáveis acima do stretched link */}
-        <div className="flex gap-5 justify-center pt-1">
-          {membro.lattes && (
-            <a
-              href={membro.lattes}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-inter text-xs font-semibold transition-opacity hover:opacity-75 relative z-20"
-              style={{ color: '#4BAF92' }}
-            >
-              Lattes ↗
-            </a>
-          )}
-          {membro.orcid && (
-            <a
-              href={membro.orcid}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-inter text-xs font-semibold transition-opacity hover:opacity-75 relative z-20"
-              style={{ color: '#4BAF92' }}
-            >
-              ORCID ↗
-            </a>
-          )}
-        </div>
+        {/* Links Lattes / ORCID / LinkedIn */}
+        {(membro.lattes || membro.orcid || membro.linkedin) && (
+          <div className="flex gap-5 justify-center pt-1">
+            {membro.lattes && (
+              <a
+                href={membro.lattes}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Currículo Lattes de ${membro.nome}`}
+                className="inline-flex items-center gap-1 font-inter text-xs font-semibold transition-opacity hover:opacity-75 relative z-20"
+                style={{ color: isCoordenador ? '#DDA01F' : '#4BAF92' }}
+              >
+                Lattes ↗
+              </a>
+            )}
+            {membro.orcid && (
+              <a
+                href={membro.orcid}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`ORCID de ${membro.nome}`}
+                className="inline-flex items-center gap-1 font-inter text-xs font-semibold transition-opacity hover:opacity-75 relative z-20"
+                style={{ color: isCoordenador ? '#DDA01F' : '#4BAF92' }}
+              >
+                ORCID ↗
+              </a>
+            )}
+            {membro.linkedin && (
+              <a
+                href={membro.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`LinkedIn de ${membro.nome}`}
+                className="inline-flex items-center gap-1 font-inter text-xs font-semibold transition-opacity hover:opacity-75 relative z-20"
+                style={{ color: isCoordenador ? '#DDA01F' : '#4BAF92' }}
+              >
+                LinkedIn ↗
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </div>
   )
@@ -425,4 +504,21 @@ function PersonIcon() {
       <circle cx="12" cy="7" r="4" />
     </svg>
   )
+}
+
+function getNivelStyle(nivel) {
+  const map = {
+    'Coordenador': { color: '#7a5300', bg: 'rgba(221,160,31,0.12)', border: 'rgba(221,160,31,0.30)' },
+    'Mestrado': { color: '#145c40', bg: 'rgba(75,175,146,0.12)', border: 'rgba(75,175,146,0.28)' },
+    'IC': { color: '#4a1a88', bg: 'rgba(105,43,186,0.10)', border: 'rgba(105,43,186,0.24)' },
+    'TCC': { color: '#1a6b55', bg: 'rgba(29,115,88,0.10)', border: 'rgba(29,115,88,0.22)' },
+    'Pós-doc': { color: '#4a1a88', bg: 'rgba(105,43,186,0.10)', border: 'rgba(105,43,186,0.24)' },
+    'Colaborador': { color: '#374151', bg: 'rgba(55,65,81,0.08)', border: 'rgba(55,65,81,0.12)' },
+  }
+  const v = map[nivel] || { color: '#374151', bg: 'rgba(55,65,81,0.06)', border: 'rgba(55,65,81,0.10)' }
+  return {
+    color: v.color,
+    background: v.bg,
+    border: `1px solid ${v.border}`,
+  }
 }

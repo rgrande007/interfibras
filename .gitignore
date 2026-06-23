@@ -43,3 +43,5 @@ next-env.d.ts
 # IDE / tools
 .vscode/
 .superpowers/
+
+.vercel

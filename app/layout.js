@@ -65,10 +65,86 @@ export const metadata = {
   },
 }
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ResearchOrganization',
+      '@id': 'https://interfibras.vercel.app/#organization',
+      name: 'INTERFIBRAS',
+      description:
+        'Grupo de pesquisa em materiais sustentáveis: nanocelulose, fiação por complexação interfacial, filmes, membranas e biofabricação. Projeto Jovem Pesquisador FAPESP · EESC-USP, São Carlos, SP.',
+      url: 'https://interfibras.vercel.app',
+      parentOrganization: {
+        '@type': 'CollegeOrUniversity',
+        name: 'Universidade de São Paulo',
+        alternateName: 'USP',
+        url: 'https://www.usp.br',
+        department: {
+          '@type': 'Organization',
+          name: 'Escola de Engenharia de São Carlos',
+          alternateName: 'EESC-USP',
+          department: { '@type': 'Organization', name: 'Departamento de Materiais (SMM)' },
+        },
+      },
+      funder: {
+        '@type': 'Organization',
+        name: 'Fundação de Amparo à Pesquisa do Estado de São Paulo',
+        alternateName: 'FAPESP',
+        url: 'https://fapesp.br',
+        identifier: '2023/03039-7',
+      },
+      member: {
+        '@type': 'Person',
+        '@id': 'https://interfibras.vercel.app/equipe#rafael-grande',
+        name: 'Rafael Grande',
+        honorificPrefix: 'Dr.',
+      },
+      knowsAbout: [
+        'Nanocellulose',
+        'Chitin nanocrystals',
+        'Biopolymers',
+        'Interfacial complexation spinning',
+        'Biofabrication',
+        'Bacterial cellulose',
+        'Sustainable materials',
+      ],
+    },
+    {
+      '@type': 'Person',
+      '@id': 'https://interfibras.vercel.app/equipe#rafael-grande',
+      name: 'Rafael Grande',
+      honorificPrefix: 'Dr.',
+      givenName: 'Rafael',
+      familyName: 'Grande',
+      jobTitle: 'Jovem Pesquisador FAPESP',
+      affiliation: {
+        '@type': 'Organization',
+        name: 'Escola de Engenharia de São Carlos — Universidade de São Paulo',
+        alternateName: 'EESC-USP',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'São Carlos',
+          addressRegion: 'SP',
+          addressCountry: 'BR',
+        },
+      },
+      sameAs: [
+        'https://orcid.org/0000-0001-7817-3698',
+        'http://lattes.cnpq.br/2232805898804829',
+      ],
+    },
+  ],
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" className={`${sora.variable} ${inter.variable}`}>
       <body className="bg-neutro text-verde-profundo antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />

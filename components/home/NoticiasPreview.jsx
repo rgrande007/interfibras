@@ -197,13 +197,17 @@ function NewsCard({ post, index }) {
       />
 
       {/* Thumbnail */}
-      <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
+      <div className="relative overflow-hidden" style={{ aspectRatio: '1/1' }}>
         {post.imagem ? (
           <img
             src={post.imagem}
             alt={post.titulo}
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ transform: hovered ? 'scale(1.05)' : 'scale(1)', transition: 'transform 0.5s ease' }}
+            style={{
+              objectPosition: 'center 15%',
+              transform: hovered ? 'scale(1.05)' : 'scale(1)',
+              transition: 'transform 0.5s ease',
+            }}
           />
         ) : (
           <PostThumbnailPlaceholder categoria={post.categoria} cat={cat} />
@@ -290,7 +294,7 @@ function MarcoFundadorCard() {
       {/* Thumbnail visual — marco fundador (enriquecido) */}
       <div
         className="relative overflow-hidden flex items-center justify-center"
-        style={{ aspectRatio: '16/9', background: 'linear-gradient(145deg, #06201e 0%, #120a30 60%, #1a0e40 100%)' }}
+        style={{ aspectRatio: '1/1', background: 'linear-gradient(145deg, #06201e 0%, #120a30 60%, #1a0e40 100%)' }}
       >
         {/* Network fiber SVG */}
         <svg
@@ -388,7 +392,7 @@ function MarcoPlanejatoCard({ index, marco }) {
       <div
         className="relative overflow-hidden flex flex-col items-center justify-center gap-3"
         style={{
-          aspectRatio: '16/9',
+          aspectRatio: '1/1',
           background: `linear-gradient(145deg, ${marco.cor}10 0%, ${marco.cor}04 100%)`,
         }}
       >

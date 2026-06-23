@@ -9,8 +9,8 @@ import RevealObserver from '@/components/ui/RevealObserver'
 
 import {
   getAllEquipe,
+  getAllPosts,
   getDestaqueOportunidades,
-  getDestaquePosts,
 } from '@/lib/content'
 
 function SectionDivider({ variant = 'jade' }) {
@@ -29,7 +29,7 @@ function SectionDivider({ variant = 'jade' }) {
 export default function HomePage() {
   const equipe = getAllEquipe()
   const oportunidades = getDestaqueOportunidades()
-  const posts = getDestaquePosts(2)
+  const posts = getAllPosts().slice(0, 2)
 
   return (
     <>
