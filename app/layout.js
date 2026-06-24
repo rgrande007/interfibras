@@ -1,9 +1,7 @@
 import { Sora, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import BackToTop from '@/components/ui/BackToTop'
+import ConditionalShell from '@/components/layout/ConditionalShell'
 
 const sora = Sora({
   subsets: ['latin'],
@@ -145,10 +143,7 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <BackToTop />
+        <ConditionalShell>{children}</ConditionalShell>
         <Analytics />
       </body>
     </html>

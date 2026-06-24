@@ -1,5 +1,5 @@
 import Hero from '@/components/home/Hero'
-import Coordenador from '@/components/home/Coordenador'
+import SobreOGrupo from '@/components/home/SobreOGrupo'
 import Pesquisa from '@/components/home/Pesquisa'
 import ComoEPesquisar from '@/components/home/ComoEPesquisar'
 import OportunidadesPreview from '@/components/home/OportunidadesPreview'
@@ -39,8 +39,8 @@ export default function HomePage() {
       <Hero />
       <SectionDivider />
 
-      {/* 2 — Por que o INTERFIBRAS existe */}
-      <Coordenador />
+      {/* 2 — O que é o INTERFIBRAS */}
+      <SobreOGrupo />
       <SectionDivider />
 
       {/* 3 — O que investigamos */}

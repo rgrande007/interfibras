@@ -198,22 +198,27 @@ export default function Hero() {
         <div className="w-full max-w-[90rem] mx-auto" style={{ paddingLeft: 'clamp(1.5rem, 5vw, 5rem)', paddingRight: 'clamp(1.5rem, 5vw, 5rem)' }}>
           <div className="max-w-[640px]">
 
-            {/* Badge institucional */}
+            {/* Bloco de identidade institucional */}
             <BlurFade delay={0.15} yOffset={8} blur="8px" duration={0.5}>
               <div
-                className="inline-flex items-center gap-2.5 rounded-full px-4 py-2 mb-8"
+                className="inline-flex flex-col gap-1 rounded-2xl px-5 py-3 mb-8"
                 style={{
                   background: 'rgba(75,175,146,0.14)',
                   border: '1px solid rgba(75,175,146,0.35)',
                 }}
               >
-                <span
-                  className="w-1.5 h-1.5 rounded-full shrink-0"
-                  style={{ background: '#4BAF92' }}
-                  aria-hidden="true"
-                />
-                <span className="font-inter font-semibold text-xs tracking-wider" style={{ color: '#8ABFB2' }}>
-                  Jovem Pesquisador FAPESP · EESC-USP · São Carlos
+                <div className="flex items-center gap-2.5">
+                  <span
+                    className="w-1.5 h-1.5 rounded-full shrink-0"
+                    style={{ background: '#4BAF92' }}
+                    aria-hidden="true"
+                  />
+                  <span className="font-sora font-bold text-sm tracking-wide" style={{ color: '#5CC4A0' }}>
+                    Grupo de Pesquisa · Biopolímeros e Interfaces
+                  </span>
+                </div>
+                <span className="font-inter text-xs tracking-wider" style={{ color: 'rgba(138,191,178,0.70)', paddingLeft: '1.125rem' }}>
+                  EESC-USP · Dep. de Materiais · São Carlos · FAPESP
                 </span>
               </div>
             </BlurFade>
@@ -241,7 +246,7 @@ export default function Hero() {
                     animation: 'shimmer 5s linear infinite',
                   }}
                 >
-                  Os materiais do futuro já existem na natureza.
+                  Somos o grupo que transforma esses recursos em materiais sem petróleo.
                 </span>
               </h1>
             </BlurFade>
@@ -259,8 +264,9 @@ export default function Hero() {
                   letterSpacing: '0.01em',
                 }}
               >
-                Pesquisamos como transformar essas matérias-primas naturais em
-                fibras, filmes e revestimentos de desempenho — sem petróleo.
+                Grupo de pesquisa experimental da Escola de Engenharia de São Carlos (USP).
+                Investigamos como organizar celulose, quitina e biopolímeros em fibras,
+                filmes e revestimentos de alto desempenho — sem petróleo.
               </p>
             </BlurFade>
 

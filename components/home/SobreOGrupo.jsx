@@ -2,6 +2,33 @@ import Link from 'next/link'
 import CopyEmailButton from '@/components/ui/CopyEmailButton'
 import { CONTACT_EMAIL, MAILTO_GERAL } from '@/lib/mailto'
 
+const identidade = [
+  {
+    rotulo: 'O que somos',
+    valor: 'Grupo de Pesquisa',
+    desc: 'Biopolímeros e Interfaces',
+    cor: '#4BAF92',
+  },
+  {
+    rotulo: 'Financiamento',
+    valor: 'FAPESP',
+    desc: 'Jovem Pesquisador · Processo 2023/03039-7',
+    cor: '#692BBA',
+  },
+  {
+    rotulo: 'Sede',
+    valor: 'EESC-USP',
+    desc: 'Dep. de Materiais (SMM) · São Carlos, SP',
+    cor: '#8ABFB2',
+  },
+  {
+    rotulo: 'Status',
+    valor: 'Em formação',
+    desc: 'Primeiros integrantes sendo selecionados agora',
+    cor: '#DDA01F',
+  },
+]
+
 const fatos = [
   {
     rotulo: 'Escala do problema',
@@ -44,7 +71,7 @@ const biopolimeros = [
   },
 ]
 
-export default function Coordenador() {
+export default function SobreOGrupo() {
   return (
     <section id="sobre" className="section-padding bg-neutro relative overflow-hidden section-grad-border-top">
 
@@ -61,64 +88,60 @@ export default function Coordenador() {
       <div className="container-page relative">
 
         {/* ── Cabeçalho da seção ───────────────────────────────── */}
-        <div className="reveal max-w-3xl mb-14">
+        <div className="reveal max-w-3xl mb-10">
           <div className="flex items-center gap-3 mb-5">
             <span
               className="block w-8 h-0.5 rounded-full"
               style={{ background: 'linear-gradient(90deg, #4BAF92, #692BBA)' }}
               aria-hidden="true"
             />
-            <span className="label-sm" style={{ color: '#1d7358' }}>Por que o INTERFIBRAS existe</span>
+            <span className="label-sm" style={{ color: '#1d7358' }}>O INTERFIBRAS</span>
           </div>
           <h2 className="display-lg text-verde-profundo mb-5">
-            Ciência de materiais para reduzir a dependência de recursos fósseis.
+            Um grupo de pesquisa em biopolímeros e interfaces.
           </h2>
-          <p className="body-base text-verde-profundo/72 max-w-2xl mb-3">
-            Filmes, embalagens, revestimentos, tintas e adesivos são materiais essenciais,
-            mas muitos ainda dependem de recursos fósseis.
-          </p>
           <p className="body-base text-verde-profundo/72 max-w-2xl">
-            O INTERFIBRAS investiga outro caminho: organizar polímeros naturais em novas
-            estruturas para reduzir essa dependência.
+            O INTERFIBRAS é um grupo de pesquisa experimental sediado no Departamento de
+            Materiais da EESC-USP, financiado pelo Programa Jovem Pesquisador em Centros
+            Emergentes da FAPESP. Investigamos como organizar biopolímeros naturais —
+            celulose, quitina e celulose bacteriana — em fibras, filmes e revestimentos
+            de base natural.
           </p>
         </div>
 
-        {/* ── Fatos contextuais ─────────────────────────────────── */}
+        {/* ── Cards de identidade ───────────────────────────────── */}
         <div className="mb-14 reveal reveal-delay-1">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-3">
-            {fatos.map((f) => (
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {identidade.map((item) => (
               <div
-                key={f.dado}
-                className="rounded-2xl px-6 py-5 flex flex-col gap-2"
+                key={item.rotulo}
+                className="rounded-2xl px-5 py-5 flex flex-col gap-1.5"
                 style={{
-                  background: `${f.cor}08`,
-                  border: `1px solid ${f.cor}28`,
+                  background: `${item.cor}08`,
+                  border: `1px solid ${item.cor}28`,
                 }}
               >
                 <span
                   className="font-inter text-xs font-bold uppercase tracking-widest"
-                  style={{ color: `${f.cor}99` }}
+                  style={{ color: `${item.cor}99` }}
                 >
-                  {f.rotulo}
+                  {item.rotulo}
                 </span>
                 <span
-                  className="font-sora font-black leading-none"
+                  className="font-sora font-black leading-tight"
                   style={{
-                    color: f.cor,
-                    fontSize: f.dado.length > 4 ? '1.75rem' : '2.25rem',
+                    color: item.cor,
+                    fontSize: item.valor.length > 10 ? '1.1rem' : '1.35rem',
                   }}
                 >
-                  {f.dado}
+                  {item.valor}
                 </span>
-                <p className="font-inter text-sm leading-relaxed text-verde-profundo/72">
-                  {f.desc}
+                <p className="font-inter text-xs leading-relaxed text-verde-profundo/65">
+                  {item.desc}
                 </p>
               </div>
             ))}
           </div>
-          <p className="font-inter text-xs text-verde-profundo/40">
-            Fontes: Geyer et al. (2017) · IEA (2022) · Xu et al. (2025, J. Bioresources & Bioproducts) · Koul et al. (2021, Environmental Research)
-          </p>
         </div>
 
         {/* ── Coordenação ───────────────────────────────────────── */}
@@ -253,6 +276,45 @@ export default function Coordenador() {
 
             </div>
           </div>
+        </div>
+
+        {/* ── Contexto — por que isso importa ──────────────────── */}
+        <div className="mb-14 reveal reveal-delay-1">
+          <p className="label-sm text-verde-profundo/55 mb-3">Por que isso importa</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-3">
+            {fatos.map((f) => (
+              <div
+                key={f.dado}
+                className="rounded-2xl px-6 py-5 flex flex-col gap-2"
+                style={{
+                  background: `${f.cor}08`,
+                  border: `1px solid ${f.cor}28`,
+                }}
+              >
+                <span
+                  className="font-inter text-xs font-bold uppercase tracking-widest"
+                  style={{ color: `${f.cor}99` }}
+                >
+                  {f.rotulo}
+                </span>
+                <span
+                  className="font-sora font-black leading-none"
+                  style={{
+                    color: f.cor,
+                    fontSize: f.dado.length > 4 ? '1.75rem' : '2.25rem',
+                  }}
+                >
+                  {f.dado}
+                </span>
+                <p className="font-inter text-sm leading-relaxed text-verde-profundo/72">
+                  {f.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="font-inter text-xs text-verde-profundo/40">
+            Fontes: Geyer et al. (2017) · IEA (2022) · Xu et al. (2025, J. Bioresources & Bioproducts) · Koul et al. (2021, Environmental Research)
+          </p>
         </div>
 
         {/* ── Materiais ─────────────────────────────────────────── */}

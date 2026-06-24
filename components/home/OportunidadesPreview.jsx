@@ -7,24 +7,6 @@ import CopyEmailButton from '@/components/ui/CopyEmailButton'
 import { CONTACT_EMAIL, MAILTO_IC, MAILTO_MESTRADO, MAILTO_GERAL } from '@/lib/mailto'
 import { formatDate } from '@/lib/utils'
 
-const passos = [
-  {
-    num: '1',
-    titulo: 'Envie seu material',
-    texto: 'CV e histórico escolar. Para mestrado, inclua uma frase sobre seu interesse na pesquisa.',
-  },
-  {
-    num: '2',
-    titulo: 'Conversa inicial',
-    texto: 'Uma reunião breve para conhecer seu perfil, disponibilidade e expectativas.',
-  },
-  {
-    num: '3',
-    titulo: 'Definição do projeto',
-    texto: 'Alinhamento do tema, plano de trabalho e, quando aplicável, submissão da bolsa FAPESP.',
-  },
-]
-
 const nivelMeta = {
   IC: {
     label: 'Iniciação Científica',
@@ -55,27 +37,6 @@ const nivelMeta = {
     btnLabel: 'Tenho interesse em mestrado',
   },
 }
-
-const paraQuem = [
-  {
-    nivel: 'IC',
-    titulo: 'Iniciação Científica',
-    descricao: 'Graduação a partir do 3.º semestre em Engenharia de Materiais, Química, Física ou áreas correlatas.',
-    cor: '#4BAF92',
-  },
-  {
-    nivel: 'TCC',
-    titulo: 'TCC',
-    descricao: 'Projetos com temas alinhados às linhas de pesquisa do grupo, com co-orientação e suporte experimental.',
-    cor: '#8ABFB2',
-  },
-  {
-    nivel: 'Mestrado',
-    titulo: 'Mestrado',
-    descricao: 'Candidatos ao PPGCEM da EESC-USP. Bolsa FAPESP sujeita à aprovação.',
-    cor: '#9b6dff',
-  },
-]
 
 function VagaCard({ op }) {
   const meta = nivelMeta[op.nivel]
@@ -275,72 +236,6 @@ export default function OportunidadesPreview({ oportunidades }) {
               </p>
             </div>
           )}
-        </div>
-
-        {/* ── Para quem é (secundário) ───────────────────────── */}
-        <div className="mb-14 reveal reveal-delay-1">
-          <p className="label-sm mb-5" style={{ color: 'rgba(138,191,178,0.50)' }}>Para quem é</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {paraQuem.map((pq) => (
-              <div
-                key={pq.nivel}
-                className="flex gap-3 rounded-xl p-4"
-                style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                }}
-              >
-                <span
-                  className="shrink-0 font-inter text-xs font-bold rounded-full px-2.5 py-1 h-fit mt-0.5"
-                  style={{
-                    background: `${pq.cor}1a`,
-                    border: `1px solid ${pq.cor}40`,
-                    color: pq.cor,
-                  }}
-                >
-                  {pq.nivel}
-                </span>
-                <p className="font-inter text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.48)' }}>
-                  {pq.descricao}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ── Como demonstrar interesse ──────────────────────── */}
-        <div className="mb-14 reveal reveal-delay-2">
-          <p
-            className="font-sora font-bold mb-8"
-            style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem', letterSpacing: '-0.01em' }}
-          >
-            Como demonstrar interesse
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4">
-            {passos.map((passo, i) => (
-              <div key={passo.num} className="flex gap-4">
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                  style={{
-                    background: 'rgba(75,175,146,0.16)',
-                    border: '1.5px solid rgba(75,175,146,0.42)',
-                  }}
-                >
-                  <span className="font-sora font-black" style={{ fontSize: '0.8rem', color: '#4BAF92' }}>
-                    {passo.num}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-sora font-bold text-white mb-1.5" style={{ fontSize: '0.9rem' }}>
-                    {passo.titulo}
-                  </p>
-                  <p className="font-inter text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                    {passo.texto}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* ── CTA final ─────────────────────────────────────── */}
