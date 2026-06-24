@@ -61,10 +61,10 @@ export default function EquipePreview({ membros }) {
                 style={{ background: 'linear-gradient(90deg, #4BAF92, #692BBA)' }}
                 aria-hidden="true"
               />
-              <span className="label-sm" style={{ color: '#1d7358' }}>Grupo em formação</span>
+              <span className="label-sm" style={{ color: '#1d7358' }}>Primeiros integrantes</span>
             </div>
             <h2 className="display-lg text-verde-profundo">
-              Um grupo científico<br className="hidden sm:block" /> em formação.
+              Primeiros experimentos.<br className="hidden sm:block" /> Primeiros papers. Sua vaga.
             </h2>
           </div>
           <Link
@@ -74,35 +74,6 @@ export default function EquipePreview({ membros }) {
           >
             Ver equipe completa →
           </Link>
-        </div>
-
-        {/* Banner — vantagem concreta de entrar num grupo novo */}
-        <div
-          className="reveal mb-10 rounded-2xl px-6 py-5"
-          style={{
-            background: 'rgba(75,175,146,0.06)',
-            border: '1px solid rgba(75,175,146,0.25)',
-          }}
-        >
-          <div className="flex items-start gap-3 mb-3">
-            <span className="relative flex h-2 w-2 shrink-0 mt-1.5" aria-hidden="true">
-              <span
-                className="absolute inline-flex h-full w-full rounded-full opacity-55"
-                style={{ background: '#4BAF92', animation: 'ping 2.2s cubic-bezier(0,0,0.2,1) infinite' }}
-              />
-              <span className="relative inline-flex h-2 w-2 rounded-full" style={{ background: '#4BAF92' }} />
-            </span>
-            <p className="font-sora font-semibold text-sm text-verde-profundo leading-snug">
-              Ciência com orientação próxima e autoria real.
-            </p>
-          </div>
-          <p className="font-inter text-xs leading-relaxed pl-5" style={{ color: 'rgba(7,37,36,0.62)' }}>
-            Integrantes trabalham diretamente com o orientador na bancada, participam das
-            decisões experimentais e figuram como autores nas publicações do grupo.{' '}
-            <Link href="/oportunidades" className="font-semibold underline underline-offset-2 hover:opacity-70 transition-opacity" style={{ color: '#1a6b55' }}>
-              Ver vagas abertas →
-            </Link>
-          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

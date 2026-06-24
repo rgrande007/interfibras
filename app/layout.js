@@ -16,7 +16,7 @@ const inter = Inter({
 })
 
 export const metadata = {
-  metadataBase: new URL('https://interfibras.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://interfibras.vercel.app'),
   title: 'INTERFIBRAS: Nanocelulose, Biopolímeros e Materiais Sustentáveis · USP',
   description:
     'Grupo de pesquisa em materiais sustentáveis: nanocelulose, fiação interfacial, filmes, membranas e biofabricação. Projeto Jovem Pesquisador FAPESP · SMM · EESC, Universidade de São Paulo.',

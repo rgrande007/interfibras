@@ -264,9 +264,9 @@ export default function Hero() {
                   letterSpacing: '0.01em',
                 }}
               >
-                Grupo de pesquisa experimental da Escola de Engenharia de São Carlos (USP).
-                Investigamos como organizar celulose, quitina e biopolímeros em fibras,
-                filmes e revestimentos de alto desempenho — sem petróleo.
+                Você vai extrair, preparar e transformar biopolímeros naturais em materiais
+                reais — com experimentos na bancada, orientação próxima e autoria nas
+                publicações do grupo.
               </p>
             </BlurFade>
 
@@ -311,20 +311,25 @@ export default function Hero() {
               </div>
             </BlurFade>
 
-            {/* Chips informativos */}
+
+            {/* Topic pills — mobile only (floating cards são lg+) */}
             <BlurFade delay={0.65} yOffset={6} blur="6px" duration={0.5}>
-              <div className="flex flex-wrap gap-2 mt-8">
+              <div className="flex flex-wrap gap-2 mt-8 lg:hidden">
                 {[
-                  { label: 'Bolsa FAPESP · Iniciação Científica', bg: 'rgba(75,175,146,0.15)', border: 'rgba(75,175,146,0.38)', color: '#5CC4A0' },
-                  { label: 'Bolsa FAPESP · Mestrado · TCC orientado', bg: 'rgba(75,175,146,0.09)', border: 'rgba(75,175,146,0.22)', color: 'rgba(138,191,178,0.85)' },
-                  { label: 'Grupo em formação · vagas abertas', bg: 'rgba(221,160,31,0.14)',  border: 'rgba(221,160,31,0.35)', color: '#e8b84b' },
-                ].map((chip) => (
+                  { label: 'Fibras por interface', cor: '#4BAF92' },
+                  { label: 'Nanoblocos naturais',  cor: '#b785f5' },
+                  { label: 'Materiais cultivados', cor: '#DDA01F' },
+                ].map((pill) => (
                   <span
-                    key={chip.label}
-                    className="font-inter text-xs font-medium rounded-full px-3 py-1"
-                    style={{ background: chip.bg, border: `1px solid ${chip.border}`, color: chip.color }}
+                    key={pill.label}
+                    className="font-inter text-xs font-medium rounded-full px-3 py-1.5"
+                    style={{
+                      background: `${pill.cor}15`,
+                      border: `1px solid ${pill.cor}40`,
+                      color: pill.cor,
+                    }}
                   >
-                    {chip.label}
+                    {pill.label}
                   </span>
                 ))}
               </div>

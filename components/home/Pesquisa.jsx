@@ -344,6 +344,28 @@ export default function Pesquisa() {
             filmes e revestimentos de base natural.
           </p>
 
+          {/* Stats de impacto */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+            {[
+              { rotulo: 'Escala do problema',    dado: '~8 bilhões', desc: 'toneladas de plástico acumuladas no ambiente desde 1950',                                      cor: '#DDA01F' },
+              { rotulo: 'Dependência fóssil',    dado: '+90%',       desc: 'dos polímeros sintéticos em uso hoje têm origem em recursos fósseis',                          cor: '#b785f5' },
+              { rotulo: 'Matéria-prima queimada', dado: '~1,9 Gt',   desc: 'de resíduos agrícolas por ano — ricos em celulose e quitina, mas queimados ou enterrados',     cor: '#4BAF92' },
+            ].map((f) => (
+              <div
+                key={f.dado}
+                className="rounded-xl px-5 py-4 flex flex-col gap-1.5"
+                style={{ background: `${f.cor}0d`, border: `1px solid ${f.cor}30` }}
+              >
+                <span className="font-inter text-[10px] font-bold uppercase tracking-widest" style={{ color: `${f.cor}bb` }}>{f.rotulo}</span>
+                <span className="font-sora font-black leading-none" style={{ color: f.cor, fontSize: f.dado.length > 4 ? '1.65rem' : '2rem' }}>{f.dado}</span>
+                <p className="font-inter text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.58)' }}>{f.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="font-inter text-[10px] mb-5" style={{ color: 'rgba(255,255,255,0.28)' }}>
+            Fontes: Geyer et al. (2017) · IEA (2022) · Xu et al. (2025) · Koul et al. (2021)
+          </p>
+
           {/* Frase-guia visual */}
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
             {fraseGuia.flatMap(({ word, cor }, i, arr) => {

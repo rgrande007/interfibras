@@ -29,47 +29,6 @@ const identidade = [
   },
 ]
 
-const fatos = [
-  {
-    rotulo: 'Escala do problema',
-    dado: '~8 bilhões',
-    desc: 'toneladas de plástico acumuladas no ambiente desde 1950',
-    cor: '#DDA01F',
-  },
-  {
-    rotulo: 'Dependência fóssil',
-    dado: '+90%',
-    desc: 'dos polímeros sintéticos em uso hoje têm origem em recursos fósseis',
-    cor: '#692BBA',
-  },
-  {
-    rotulo: 'Matéria-prima queimada',
-    dado: '~1,9 Gt',
-    desc: 'gigatoneladas de resíduos agrícolas gerados por ano — queimados ou enterrados, mas ricos em celulose, quitina e outros biopolímeros aproveitáveis',
-    cor: '#4BAF92',
-  },
-]
-
-const biopolimeros = [
-  {
-    nome: 'Celulose',
-    origem: 'Madeira · algodão · bagaço de cana',
-    descricao: 'O biopolímero mais abundante da Terra. Em escala nano, forma estruturas leves e resistentes para filmes, fibras e revestimentos.',
-    cor: '#4BAF92',
-  },
-  {
-    nome: 'Quitina e quitosana',
-    origem: 'Carapaças de crustáceos · fungos',
-    descricao: 'Biopolímeros com cargas superficiais favoráveis à formação de redes, filmes e materiais com propriedades ajustáveis.',
-    cor: '#8ABFB2',
-  },
-  {
-    nome: 'Celulose bacteriana',
-    origem: 'Produzida por bactérias como Komagataeibacter',
-    descricao: 'Cultivada, não extraída. Redes puras de celulose sem lignina, com alto potencial para reforço, membranas e biomateriais.',
-    cor: '#DDA01F',
-  },
-]
 
 export default function SobreOGrupo() {
   return (
@@ -255,6 +214,29 @@ export default function SobreOGrupo() {
                 </p>
               </div>
 
+              {/* Track record do coordenador */}
+              <div
+                className="rounded-2xl p-5"
+                style={{
+                  background: 'rgba(75,175,146,0.05)',
+                  border: '1px solid rgba(75,175,146,0.20)',
+                }}
+              >
+                <p className="label-sm text-verde-profundo/55 mb-3">Histórico de pesquisa</p>
+                <div className="space-y-2">
+                  {[
+                    { dado: '20+', desc: 'artigos publicados em periódicos internacionais' },
+                    { dado: '600+', desc: 'citações acumuladas (Google Scholar)' },
+                    { dado: 'Pós-doc', desc: 'Aalto University (Finlândia) — materiais celulósicos' },
+                  ].map((item) => (
+                    <div key={item.dado} className="flex items-baseline gap-2">
+                      <span className="font-sora font-black text-sm shrink-0" style={{ color: '#4BAF92' }}>{item.dado}</span>
+                      <span className="font-inter text-xs text-verde-profundo/65 leading-snug">{item.desc}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Contato */}
               <div className="flex flex-wrap items-center gap-3">
                 <a
@@ -278,98 +260,6 @@ export default function SobreOGrupo() {
           </div>
         </div>
 
-        {/* ── Contexto — por que isso importa ──────────────────── */}
-        <div className="mb-14 reveal reveal-delay-1">
-          <p className="label-sm text-verde-profundo/55 mb-3">Por que isso importa</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-3">
-            {fatos.map((f) => (
-              <div
-                key={f.dado}
-                className="rounded-2xl px-6 py-5 flex flex-col gap-2"
-                style={{
-                  background: `${f.cor}08`,
-                  border: `1px solid ${f.cor}28`,
-                }}
-              >
-                <span
-                  className="font-inter text-xs font-bold uppercase tracking-widest"
-                  style={{ color: `${f.cor}99` }}
-                >
-                  {f.rotulo}
-                </span>
-                <span
-                  className="font-sora font-black leading-none"
-                  style={{
-                    color: f.cor,
-                    fontSize: f.dado.length > 4 ? '1.75rem' : '2.25rem',
-                  }}
-                >
-                  {f.dado}
-                </span>
-                <p className="font-inter text-sm leading-relaxed text-verde-profundo/72">
-                  {f.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-          <p className="font-inter text-xs text-verde-profundo/40">
-            Fontes: Geyer et al. (2017) · IEA (2022) · Xu et al. (2025, J. Bioresources & Bioproducts) · Koul et al. (2021, Environmental Research)
-          </p>
-        </div>
-
-        {/* ── Materiais ─────────────────────────────────────────── */}
-        <div className="reveal reveal-delay-2">
-          <p className="label-sm text-verde-profundo/55 mb-5">De onde partimos</p>
-          <div className="space-y-3 mb-10">
-            {biopolimeros.map((b) => (
-              <div
-                key={b.nome}
-                className="rounded-xl p-5 flex flex-col gap-2"
-                style={{
-                  background: '#ffffff',
-                  border: `1px solid ${b.cor}28`,
-                }}
-              >
-                <div className="flex flex-wrap items-center gap-2">
-                  <span
-                    className="w-2 h-2 rounded-full shrink-0"
-                    style={{ background: b.cor }}
-                    aria-hidden="true"
-                  />
-                  <span className="font-sora font-bold text-sm text-verde-profundo">{b.nome}</span>
-                  <span
-                    className="font-inter text-xs font-medium rounded-full px-2.5 py-0.5"
-                    style={{ background: `${b.cor}12`, border: `1px solid ${b.cor}28`, color: '#1a6b55' }}
-                  >
-                    {b.origem}
-                  </span>
-                </div>
-                <p className="font-inter text-sm leading-relaxed text-verde-profundo/72">
-                  {b.descricao}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div
-            className="rounded-2xl p-6"
-            style={{
-              background: 'rgba(75,175,146,0.06)',
-              border: '1px solid rgba(75,175,146,0.20)',
-            }}
-          >
-            <p className="label-sm text-verde-profundo/55 mb-3">O desafio científico</p>
-            <p className="font-inter text-sm leading-relaxed text-verde-profundo/75 mb-3">
-              Extraímos, purificamos e organizamos biopolímeros em escala nano e
-              microscópica — criando filmes, fibras, membranas e revestimentos com
-              propriedades controladas.
-            </p>
-            <p className="font-inter text-sm leading-relaxed text-verde-profundo/75">
-              É nesse trabalho experimental, meticuloso e interdisciplinar que os próximos
-              integrantes do INTERFIBRAS vão se formar.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   )

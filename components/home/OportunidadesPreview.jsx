@@ -227,54 +227,53 @@ export default function OportunidadesPreview({ oportunidades }) {
             </div>
           ) : (
             <div
-              className="rounded-2xl p-8 text-center"
+              className="rounded-2xl p-8"
               style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
             >
-              <p className="font-sora font-semibold text-white text-lg mb-2">Novas vagas em breve</p>
-              <p className="font-inter text-sm mb-5" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                Manifeste seu interesse com antecedência. Os primeiros contatos são priorizados.
+              <p className="font-sora font-semibold text-white text-lg mb-2">Novas vagas abrindo em breve</p>
+              <p className="font-inter text-sm mb-6" style={{ color: 'rgba(255,255,255,0.58)' }}>
+                O grupo está em formação e seleciona os primeiros integrantes agora.
+                Candidatos que manifestam interesse antes da abertura formal têm prioridade.
+              </p>
+              <a
+                href={MAILTO_GERAL}
+                onClick={() => track('mailto_click_fallback')}
+                className="inline-flex items-center gap-2 font-sora font-semibold text-sm text-white rounded-xl px-5 py-3 transition-all duration-200 hover:opacity-90"
+                style={{ background: 'rgba(75,175,146,0.25)', border: '1px solid rgba(75,175,146,0.45)' }}
+              >
+                <MailIcon size={14} />
+                Manifestar interesse agora
+              </a>
+              <p className="font-inter text-xs mt-4" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                Resposta em até 5 dias úteis · Sem compromisso
               </p>
             </div>
           )}
         </div>
 
-        {/* ── CTA final ─────────────────────────────────────── */}
+        {/* ── Próximo passo ─────────────────────────────────── */}
         <div
-          className="text-center pt-10 reveal"
+          className="pt-10 reveal"
           style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
         >
-          <a
-            href={MAILTO_GERAL}
-            onClick={() => track('mailto_click')}
-            className="inline-flex items-center gap-2.5 font-sora font-bold text-white
-                       rounded-2xl px-9 py-4 transition-all duration-200
-                       hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
-            style={{
-              background: 'linear-gradient(135deg, #4BAF92 0%, #2d8a72 100%)',
-              boxShadow: '0 8px 36px rgba(75,175,146,0.42)',
-              fontSize: '1rem',
-            }}
-          >
-            <MailIcon size={17} />
-            Enviar interesse por email
-          </a>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href={MAILTO_GERAL}
-              onClick={() => track('mailto_click')}
-              className="font-inter text-sm underline underline-offset-2 transition-opacity hover:opacity-75"
-              style={{ color: '#8ABFB2' }}
-            >
-              {CONTACT_EMAIL}
-            </a>
-            <CopyEmailButton
-              className="font-inter text-xs font-semibold rounded-full px-3 py-1 transition-all duration-200 hover:opacity-80 cursor-pointer"
-              style={{
-                background: 'rgba(255,255,255,0.09)',
-                border: '1px solid rgba(255,255,255,0.22)',
-                color: 'rgba(255,255,255,0.70)',
-              }}
-            />
+          <p className="font-inter text-xs text-center mb-4" style={{ color: 'rgba(255,255,255,0.38)' }}>
+            Como funciona após o contato
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center text-center">
+            {[
+              { n: '01', text: 'Você envia email com breve apresentação' },
+              { n: '02', text: 'Resposta em até 5 dias úteis' },
+              { n: '03', text: 'Conversa por videochamada com o orientador' },
+            ].map((step) => (
+              <div
+                key={step.n}
+                className="flex-1 rounded-xl px-5 py-4 flex flex-col gap-1.5 items-center"
+                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+              >
+                <span className="font-sora font-black text-lg" style={{ color: 'rgba(75,175,146,0.60)' }}>{step.n}</span>
+                <p className="font-inter text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.58)' }}>{step.text}</p>
+              </div>
+            ))}
           </div>
         </div>
 
