@@ -53,8 +53,8 @@ export default function PublicacoesPreview({ publicacoes }) {
         </div>
 
         <p className="reveal body-base text-verde-profundo/75 max-w-2xl mb-12">
-          Resultados publicados pelo grupo INTERFIBRAS: artigos em
-          biopolímeros, nanocelulose, fiação interfacial e biofabricação.
+          Resultados publicados pelo grupo INTERFIBRAS: artigos em polímeros naturais,
+          nanocelulose, fiação interfacial e biofabricação.
           A lista cresce à medida que novos trabalhos são submetidos e aceitos.
         </p>
 

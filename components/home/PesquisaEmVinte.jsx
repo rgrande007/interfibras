@@ -6,7 +6,7 @@ const fluxo = [
   {
     id: 'nanoblocos',
     titulo: 'Nanoblocos naturais',
-    descricao: 'A natureza produz estruturas em escala nanométrica com propriedades únicas: celulose, quitina e outros biopolímeros. Nossa matéria-prima começa aqui.',
+    descricao: 'A natureza produz polímeros e estruturas em escala nanométrica com propriedades únicas. Esses componentes renováveis são a matéria-prima do grupo.',
     cor: '#4BAF92',
     icon: <LeafIcon />,
     step: '01',
@@ -47,7 +47,7 @@ const nanoblocos = [
   {
     nome: 'Quitosana',
     origem: 'Derivada da desacetilação da quitina',
-    descricao: 'Forma solúvel da quitina. Interage com outros biopolímeros formando filmes, membranas e complexos versáteis para aplicações de barreira e biomedicina.',
+    descricao: 'Forma solúvel da quitina. Interage com outros polímeros naturais para formar filmes, membranas e complexos versáteis para aplicações de barreira.',
     cor: '#692BBA',
     textColor: '#4a1a88',
   },

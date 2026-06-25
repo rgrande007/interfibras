@@ -2,14 +2,14 @@ import Link from 'next/link'
 
 const competencias = [
   {
-    titulo: 'Biomassa e biopolímeros',
+    titulo: 'Biomassa e polímeros naturais',
     descricao: 'Aprender a extrair, purificar e preparar dispersões de materiais naturais.',
     cor: '#4BAF92',
     icon: <LeafIcon />,
   },
   {
     titulo: 'Filmes, fibras e revestimentos',
-    descricao: 'Transformar biopolímeros em materiais organizados por rotas experimentais limpas.',
+    descricao: 'Transformar polímeros naturais em materiais estruturados por rotas experimentais.',
     cor: '#692BBA',
     icon: <LayersIcon />,
   },
@@ -151,7 +151,7 @@ export default function ComoEPesquisar() {
                   letterSpacing: '-0.01em',
                 }}
               >
-                Você não precisa chegar especialista. Precisa chegar curioso, cuidadoso e disposto a aprender ciência experimental.
+                Você não precisa chegar pronto. Precisa chegar com vontade de aprender e disposição para a prática experimental.
               </blockquote>
 
               <div
@@ -182,7 +182,7 @@ export default function ComoEPesquisar() {
               }}
             >
               <p className="font-inter text-sm leading-relaxed text-verde-profundo/75">
-                Você terá reuniões regulares, revisão de protocolos, discussão de resultados e orientação na escrita. A autonomia é construída aos poucos, com rigor e confiança.
+                Você terá reuniões regulares, revisão de protocolos, discussão de resultados e orientação na escrita. A autonomia é construída aos poucos.
               </p>
             </div>
 

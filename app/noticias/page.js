@@ -70,7 +70,7 @@ export default async function NoticiasPage({ searchParams }) {
                 Acompanhe o INTERFIBRAS.
               </h1>
               <p className="font-inter text-sm max-w-lg" style={{ color: 'rgba(255,255,255,0.52)', lineHeight: '1.65' }}>
-                Marcos científicos, publicações, eventos e registros de um grupo em formação.
+                Marcos científicos, publicações, eventos e registros do INTERFIBRAS.
               </p>
             </div>
             {allPosts.length > 0 && (

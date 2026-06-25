@@ -21,9 +21,9 @@ const conexoes = [
   {
     pais: 'Holanda',
     sigla: 'NLD',
-    area: 'Biopolímeros & bioeconomia circular',
+    area: 'Polímeros naturais e bioeconomia',
     cor: '#DDA01F',
-    descricao: 'Conexão em desenvolvimento com grupos de referência em biopolímeros e sustentabilidade.',
+    descricao: 'Conexão em desenvolvimento com grupos de referência em materiais de origem natural e bioeconomia.',
   },
 ]
 
@@ -61,10 +61,10 @@ export default function EquipePreview({ membros }) {
                 style={{ background: 'linear-gradient(90deg, #4BAF92, #692BBA)' }}
                 aria-hidden="true"
               />
-              <span className="label-sm" style={{ color: '#1d7358' }}>Primeiros integrantes</span>
+              <span className="label-sm" style={{ color: '#1d7358' }}>Equipe</span>
             </div>
             <h2 className="display-lg text-verde-profundo">
-              Primeiros experimentos.<br className="hidden sm:block" /> Primeiros papers. Sua vaga.
+              Quem faz o INTERFIBRAS.
             </h2>
           </div>
           <Link

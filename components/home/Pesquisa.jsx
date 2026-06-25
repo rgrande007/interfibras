@@ -16,7 +16,7 @@ const fraseGuia = [
 const secundarios = [
   {
     title:       'Extração e preparo',
-    subtitle:    'Da biomassa aos biopolímeros',
+    subtitle:    'Da biomassa aos polímeros naturais',
     description: 'Extraímos, purificamos e caracterizamos celulose, quitina e seus derivados em escala micro e nanométrica para controlar composição, carga, dispersão e desempenho.',
     tags:        ['Nanocelulose', 'Nanoquitina', 'Dispersões'],
     cor:         '#8ABFB2',
@@ -25,7 +25,7 @@ const secundarios = [
   {
     title:       'Filmes e membranas',
     subtitle:    'Organização em camadas e redes',
-    description: 'Organizamos biopolímeros naturais em filmes e membranas para estudar estrutura, estabilidade, morfologia e propriedades de barreira.',
+    description: 'Organizamos polímeros naturais em filmes e membranas para estudar estrutura, estabilidade, morfologia e propriedades de barreira.',
     tags:        ['Filmes', 'Membranas', 'LbL', 'Filtração'],
     cor:         '#b785f5',
     Icon:        Layers,
@@ -141,9 +141,10 @@ function CardPrincipal() {
                 transition: 'color 350ms',
               }}
             >
-              Investigamos como biopolímeros de cargas opostas interagem em interfaces aquosas
-              para formar filamentos contínuos. Essa é a linha central do grupo e conecta
-              extração, organização molecular e processamento de materiais de base natural.
+              Investigamos como polímeros naturais de cargas opostas interagem em interfaces
+              aquosas para formar filamentos contínuos. Essa é a linha central do grupo e
+              conecta extração, organização molecular e processamento de materiais de origem
+              natural.
             </p>
           </div>
 
@@ -310,16 +311,37 @@ export default function Pesquisa() {
 
       <div className="container-page relative z-10">
 
+        {/* Frase-guia visual — antes do label */}
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-8 reveal">
+          {fraseGuia.flatMap(({ word, cor }, i, arr) => {
+            const els = [
+              <span
+                key={word}
+                className="font-sora font-bold text-sm"
+                style={{ color: cor }}
+              >
+                {word}
+              </span>,
+            ]
+            if (i < arr.length - 1) {
+              els.push(
+                <span
+                  key={`sep-${i}`}
+                  className="font-sora text-sm select-none"
+                  style={{ color: 'rgba(255,255,255,0.18)' }}
+                  aria-hidden="true"
+                >
+                  ·
+                </span>
+              )
+            }
+            return els
+          })}
+        </div>
+
         {/* Header */}
         <div className="mb-10 reveal">
-          <div className="flex items-center gap-3 mb-4">
-            <span
-              className="block w-8 h-0.5 rounded-full"
-              style={{ background: 'linear-gradient(90deg, #4BAF92, #692BBA)' }}
-              aria-hidden="true"
-            />
-            <span className="label-sm text-verde-claro">Linhas de pesquisa</span>
-          </div>
+          <span className="label-sm text-verde-claro mb-4 block">Linhas de pesquisa</span>
 
           <BlurFade delay={0.1} inView yOffset={10} blur="10px" duration={0.5}>
             <h2
@@ -339,17 +361,17 @@ export default function Pesquisa() {
             className="font-inter text-sm leading-relaxed max-w-2xl mb-6"
             style={{ color: 'rgba(255,255,255,0.62)' }}
           >
-            A linha central do INTERFIBRAS é a fiação interfacial de biopolímeros naturais:
-            transformamos materiais extraídos ou cultivados a partir da biomassa em fibras,
-            filmes e revestimentos de base natural.
+            A linha central do INTERFIBRAS é a fiação interfacial de polímeros naturais:
+            investigamos como componentes de origem renovável se organizam em interfaces para
+            formar fibras, filmes e revestimentos avançados.
           </p>
 
           {/* Stats de impacto */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
             {[
-              { rotulo: 'Escala do problema',    dado: '~8 bilhões', desc: 'toneladas de plástico acumuladas no ambiente desde 1950',                                      cor: '#DDA01F' },
-              { rotulo: 'Dependência fóssil',    dado: '+90%',       desc: 'dos polímeros sintéticos em uso hoje têm origem em recursos fósseis',                          cor: '#b785f5' },
-              { rotulo: 'Matéria-prima queimada', dado: '~1,9 Gt',   desc: 'de resíduos agrícolas por ano — ricos em celulose e quitina, mas queimados ou enterrados',     cor: '#4BAF92' },
+              { rotulo: 'Escala do problema',    dado: '~8 bilhões', desc: 'toneladas de plástico acumuladas no ambiente desde 1950',                                  cor: '#DDA01F' },
+              { rotulo: 'Dependência fóssil',    dado: '+90%',       desc: 'dos polímeros sintéticos em uso hoje têm origem em recursos fósseis',                      cor: '#b785f5' },
+              { rotulo: 'Matéria-prima queimada', dado: '~1,9 Gt',   desc: 'de resíduos agrícolas por ano, ricos em celulose e quitina, mas queimados ou enterrados',  cor: '#4BAF92' },
             ].map((f) => (
               <div
                 key={f.dado}
@@ -365,34 +387,6 @@ export default function Pesquisa() {
           <p className="font-inter text-[10px] mb-5" style={{ color: 'rgba(255,255,255,0.28)' }}>
             Fontes: Geyer et al. (2017) · IEA (2022) · Xu et al. (2025) · Koul et al. (2021)
           </p>
-
-          {/* Frase-guia visual */}
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-            {fraseGuia.flatMap(({ word, cor }, i, arr) => {
-              const els = [
-                <span
-                  key={word}
-                  className="font-sora font-bold text-sm"
-                  style={{ color: cor }}
-                >
-                  {word}
-                </span>,
-              ]
-              if (i < arr.length - 1) {
-                els.push(
-                  <span
-                    key={`sep-${i}`}
-                    className="font-sora text-sm select-none"
-                    style={{ color: 'rgba(255,255,255,0.18)' }}
-                    aria-hidden="true"
-                  >
-                    ·
-                  </span>
-                )
-              }
-              return els
-            })}
-          </div>
         </div>
 
         {/* Cards */}

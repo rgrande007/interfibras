@@ -185,8 +185,7 @@ export default function OportunidadesPreview({ oportunidades }) {
             </h2>
           </BlurFade>
           <p className="font-inter" style={{ color: 'rgba(255,255,255,0.68)', fontSize: '1rem', lineHeight: 1.78 }}>
-            O INTERFIBRAS está selecionando seus primeiros integrantes. Entrar agora significa
-            trabalhar diretamente com o orientador e participar dos primeiros experimentos do grupo.
+            Estamos buscando novos integrantes. Seja da área de materiais, química, física ou áreas correlatas.
           </p>
         </div>
 
@@ -232,7 +231,7 @@ export default function OportunidadesPreview({ oportunidades }) {
             >
               <p className="font-sora font-semibold text-white text-lg mb-2">Novas vagas abrindo em breve</p>
               <p className="font-inter text-sm mb-6" style={{ color: 'rgba(255,255,255,0.58)' }}>
-                O grupo está em formação e seleciona os primeiros integrantes agora.
+                O INTERFIBRAS seleciona seus primeiros integrantes agora.
                 Candidatos que manifestam interesse antes da abertura formal têm prioridade.
               </p>
               <a

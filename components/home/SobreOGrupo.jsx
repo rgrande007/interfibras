@@ -21,12 +21,6 @@ const identidade = [
     desc: 'Dep. de Materiais (SMM) · São Carlos, SP',
     cor: '#8ABFB2',
   },
-  {
-    rotulo: 'Status',
-    valor: 'Em formação',
-    desc: 'Primeiros integrantes sendo selecionados agora',
-    cor: '#DDA01F',
-  },
 ]
 
 
@@ -57,14 +51,13 @@ export default function SobreOGrupo() {
             <span className="label-sm" style={{ color: '#1d7358' }}>O INTERFIBRAS</span>
           </div>
           <h2 className="display-lg text-verde-profundo mb-5">
-            Um grupo de pesquisa em biopolímeros e interfaces.
+            Um grupo de pesquisa em materiais de origem natural e interfaces.
           </h2>
           <p className="body-base text-verde-profundo/72 max-w-2xl">
             O INTERFIBRAS é um grupo de pesquisa experimental sediado no Departamento de
             Materiais da EESC-USP, financiado pelo Programa Jovem Pesquisador em Centros
-            Emergentes da FAPESP. Investigamos como organizar biopolímeros naturais —
-            celulose, quitina e celulose bacteriana — em fibras, filmes e revestimentos
-            de base natural.
+            Emergentes da FAPESP. Investigamos como polímeros naturais podem ser organizados
+            em interfaces para formar fibras, filmes e revestimentos funcionais.
           </p>
         </div>
 
@@ -227,7 +220,7 @@ export default function SobreOGrupo() {
                   {[
                     { dado: '20+', desc: 'artigos publicados em periódicos internacionais' },
                     { dado: '600+', desc: 'citações acumuladas (Google Scholar)' },
-                    { dado: 'Pós-doc', desc: 'Aalto University (Finlândia) — materiais celulósicos' },
+                    { dado: 'Pós-doc', desc: 'Pesquisador pós-doc contratado · Aalto University (Finlândia)' },
                   ].map((item) => (
                     <div key={item.dado} className="flex items-baseline gap-2">
                       <span className="font-sora font-black text-sm shrink-0" style={{ color: '#4BAF92' }}>{item.dado}</span>

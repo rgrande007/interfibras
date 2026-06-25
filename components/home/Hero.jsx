@@ -90,96 +90,6 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Rede decorativa — xl+ apenas */}
-      <svg
-        className="absolute hidden lg:block pointer-events-none z-[3]"
-        style={{ top: '8%', right: '2%', width: '520px', height: '80%', opacity: 0.07 }}
-        viewBox="0 0 520 520"
-        fill="none"
-        aria-hidden="true"
-      >
-        {/* nodes */}
-        {[
-          [260,60],[380,120],[440,240],[380,360],[260,420],[140,360],[80,240],[140,120],
-          [320,180],[200,180],[320,300],[200,300],[260,240],
-        ].map(([cx,cy],i) => (
-          <circle key={i} cx={cx} cy={cy} r="4" fill="#4BAF92" fillOpacity="0.9" />
-        ))}
-        {/* edges */}
-        {[
-          [260,60,380,120],[380,120,440,240],[440,240,380,360],[380,360,260,420],
-          [260,420,140,360],[140,360,80,240],[80,240,140,120],[140,120,260,60],
-          [260,60,260,240],[380,120,320,180],[440,240,320,300],[380,360,260,240],
-          [80,240,200,180],[140,120,200,180],[200,180,260,240],[320,180,260,240],
-          [320,180,320,300],[200,180,200,300],[320,300,260,240],[200,300,260,240],
-          [320,300,260,420],[200,300,140,360],
-        ].map(([x1,y1,x2,y2],i) => (
-          <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#8ABFB2" strokeWidth="1" strokeOpacity="0.6" />
-        ))}
-      </svg>
-
-      {/* Floating science cards — xl+ apenas */}
-      {/* Card 1: Fibras contínuas (jade) */}
-      <div
-        className="hidden lg:block absolute pointer-events-none z-[4] hero-card-1"
-        style={{ top: '16%', right: '8%', width: '224px' }}
-        aria-hidden="true"
-      >
-        <div style={{
-          background: 'rgba(7,37,36,0.62)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          border: '1px solid rgba(75,175,146,0.28)',
-          borderRadius: '16px',
-          padding: '18px 20px 0 20px',
-          overflow: 'hidden',
-        }}>
-          <p style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.12em', color: '#5CC4A0', textTransform: 'uppercase', marginBottom: '6px' }}>Organização</p>
-          <p style={{ fontSize: '1.0rem', fontWeight: 700, color: '#fff', lineHeight: 1.2, marginBottom: '8px', fontFamily: 'var(--font-sora)' }}>Fibras por interface</p>
-          <p style={{ fontSize: '0.76rem', color: 'rgba(255,255,255,0.60)', lineHeight: 1.55, marginBottom: '16px' }}>Biopolímeros em água se encontram, interagem e formam fibras contínuas.</p>
-          <div style={{ height: '3px', background: 'linear-gradient(90deg,#4BAF92,#8ABFB2)', borderRadius: '0 0 0 0', margin: '0 -20px' }} />
-        </div>
-      </div>
-
-      {/* Card 2: Nanoblocos (violet) */}
-      <div
-        className="hidden lg:block absolute pointer-events-none z-[4] hero-card-2"
-        style={{ top: '42%', right: '4%', width: '208px' }}
-        aria-hidden="true"
-      >
-        <div style={{
-          background: 'rgba(12,10,32,0.58)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          border: '1px solid rgba(105,43,186,0.32)',
-          borderRadius: '16px',
-          padding: '18px 20px 16px 20px',
-        }}>
-          <p style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.12em', color: '#a077e8', textTransform: 'uppercase', marginBottom: '6px' }}>Biomassa</p>
-          <p style={{ fontSize: '1.0rem', fontWeight: 700, color: '#fff', lineHeight: 1.2, marginBottom: '8px', fontFamily: 'var(--font-sora)' }}>Nanoblocos naturais</p>
-          <p style={{ fontSize: '0.76rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.5 }}>Celulose e quitina extraídas da biomassa viram blocos para novos materiais.</p>
-        </div>
-      </div>
-
-      {/* Card 3: Biofabricação (gold) */}
-      <div
-        className="hidden lg:block absolute pointer-events-none z-[4] hero-card-3"
-        style={{ top: '66%', right: '13%', width: '196px' }}
-        aria-hidden="true"
-      >
-        <div style={{
-          background: 'rgba(20,14,5,0.60)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          border: '1px solid rgba(221,160,31,0.30)',
-          borderRadius: '16px',
-          padding: '18px 20px 16px 20px',
-        }}>
-          <p style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.12em', color: '#e8b84b', textTransform: 'uppercase', marginBottom: '6px' }}>Biofabricação</p>
-          <p style={{ fontSize: '1.0rem', fontWeight: 700, color: '#fff', lineHeight: 1.2, marginBottom: '8px', fontFamily: 'var(--font-sora)' }}>Materiais cultivados</p>
-          <p style={{ fontSize: '0.76rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.5 }}>Bactérias produzem celulose pura para filmes, fibras e revestimentos.</p>
-        </div>
-      </div>
 
       {/* Grain texture overlay */}
       <div
@@ -235,7 +145,7 @@ export default function Hero() {
                   color: '#ffffff',
                 }}
               >
-                Madeira, carapaças e bactérias.{' '}
+                Estudamos como fontes naturais renováveis podem dar origem a{' '}
                 <span
                   style={{
                     background: 'linear-gradient(90deg, #4BAF92 0%, #8ABFB2 25%, #F7F2A3 45%, #4BAF92 60%, #8ABFB2 80%, #F7F2A3 100%)',
@@ -246,7 +156,7 @@ export default function Hero() {
                     animation: 'shimmer 5s linear infinite',
                   }}
                 >
-                  Somos o grupo que transforma esses recursos em materiais sem petróleo.
+                  materiais avançados.
                 </span>
               </h1>
             </BlurFade>
@@ -264,9 +174,9 @@ export default function Hero() {
                   letterSpacing: '0.01em',
                 }}
               >
-                Você vai extrair, preparar e transformar biopolímeros naturais em materiais
-                reais — com experimentos na bancada, orientação próxima e autoria nas
-                publicações do grupo.
+                Extraímos, organizamos e biofabricamos materiais obtidos de plantas,
+                carapaças de crustáceos e insetos e bactérias para desenvolver fibras,
+                filmes e revestimentos.
               </p>
             </BlurFade>
 
@@ -311,29 +221,6 @@ export default function Hero() {
               </div>
             </BlurFade>
 
-
-            {/* Topic pills — mobile only (floating cards são lg+) */}
-            <BlurFade delay={0.65} yOffset={6} blur="6px" duration={0.5}>
-              <div className="flex flex-wrap gap-2 mt-8 lg:hidden">
-                {[
-                  { label: 'Fibras por interface', cor: '#4BAF92' },
-                  { label: 'Nanoblocos naturais',  cor: '#b785f5' },
-                  { label: 'Materiais cultivados', cor: '#DDA01F' },
-                ].map((pill) => (
-                  <span
-                    key={pill.label}
-                    className="font-inter text-xs font-medium rounded-full px-3 py-1.5"
-                    style={{
-                      background: `${pill.cor}15`,
-                      border: `1px solid ${pill.cor}40`,
-                      color: pill.cor,
-                    }}
-                  >
-                    {pill.label}
-                  </span>
-                ))}
-              </div>
-            </BlurFade>
 
           </div>
         </div>

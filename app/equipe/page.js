@@ -44,8 +44,8 @@ export default function EquipePage() {
             As pessoas do INTERFIBRAS.
           </h1>
           <p className="font-inter text-white/55 max-w-xl leading-relaxed">
-            Um grupo em formação, reunindo pesquisadores, estudantes e colaboradores em
-            torno de materiais sustentáveis e biofabricação.
+            Pesquisadores, estudantes e colaboradores reunidos em torno de biopolímeros,
+            interfaces e materiais de base natural.
           </p>
         </div>
       </div>

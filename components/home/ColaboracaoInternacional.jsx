@@ -40,12 +40,12 @@ const parceiros = [
     id: 'nld',
     pais: 'Holanda',
     sigla: 'NLD',
-    area: 'Biopolímeros & bioeconomia circular',
+    area: 'Polímeros naturais e bioeconomia',
     tipo: 'Colaboração científica',
     cor: '#DDA01F',
     coords: [4.9, 52.4],
     descricao:
-      'Conexão em desenvolvimento com grupos de referência em biopolímeros, sustentabilidade e ciência de materiais renováveis.',
+      'Conexão em desenvolvimento com grupos de referência em materiais de origem natural e bioeconomia.',
   },
 ]
 
@@ -82,7 +82,7 @@ export default function ColaboracaoInternacional() {
           </h2>
           <p className="body-lg text-white/70">
             O INTERFIBRAS mantém colaborações científicas com grupos de referência
-            em materiais celulósicos, nanocelulose e biopolímeros nos Estados Unidos,
+            em materiais celulósicos, nanocelulose e polímeros naturais nos Estados Unidos,
             Finlândia e Holanda.
           </p>
         </div>
